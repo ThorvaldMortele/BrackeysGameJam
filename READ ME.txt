@@ -1,0 +1,21 @@
+Current planning for the project with the boys
+
+--------------------
+Theme: chaos
+--------------------
+Concept:
+An arena wave fight game
+- player can shoot the enemies
+--------------------
+Reference (similar games):
+-
+-
+-
+--------------------
+Team Roles:
+
+Koen;
+Thorvald;
+Vincent;
+--------------------
+Art style:
