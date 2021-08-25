@@ -2,7 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameLoop : MonoBehaviour
-{
 
+namespace MoveSystem
+{
+    public class EnemyMovement : MonoBehaviour
+    {
+
+    }
 }

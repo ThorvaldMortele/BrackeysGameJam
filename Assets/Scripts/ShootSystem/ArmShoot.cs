@@ -4,35 +4,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArmShoot : MonoBehaviour
+namespace ShootSystem
 {
-    public float Damage = 10f;
-    public float Range = 100f;
-    public float FireRate = 10f;
-    public float NextTimeToFire;
-
-    public Camera FpsCam;
-
-    // Update is called once per frame
-    void Update()
+    public class ArmShoot : MonoBehaviour
     {
-        if (Input.GetButton("Fire1") && Time.time >= NextTimeToFire)
-        {
-            NextTimeToFire = Time.time + 1 / FireRate;
-            Shoot();
-        }
-    }
+        public float Damage = 10f;
+        public float Range = 100f;
+        public float FireRate = 10f;
+        public float NextTimeToFire;
 
-    private void Shoot()
-    {
-        RaycastHit hit;
-        if (Physics.Raycast(FpsCam.transform.position, FpsCam.transform.forward, out hit, Range))
+        public Camera FpsCam;
+
+        // Update is called once per frame
+        void Update()
         {
-            Target target = hit.transform.GetComponent<Target>();
-            if (target != null)
+            if (Input.GetButton("Fire1") && Time.time >= NextTimeToFire)
             {
-                target.TakeDamage(Damage);
-                Debug.Log("aw");
+                NextTimeToFire = Time.time + 1 / FireRate;
+                Shoot();
+            }
+        }
+
+        private void Shoot()
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(FpsCam.transform.position, FpsCam.transform.forward, out hit, Range))
+            {
+                Target target = hit.transform.GetComponent<Target>();
+                if (target != null)
+                {
+                    target.TakeDamage(Damage);
+                    Debug.Log("aw");
+                }
             }
         }
     }
