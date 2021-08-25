@@ -5,7 +5,32 @@ Theme: chaos
 --------------------
 Concept:
 An arena wave fight game
-- player can shoot the enemies
+
+Player
+- player can shoot the enemies (FPS)
+	- addForce() to instantiated prefab (object pooling) / hitscan?
+- after x amount kills/time go into frenzy (special attack)
+
+- pick ups (change shooting behaviour) (expressed in time, not bullets)
+	- depending on the performance (effects stack?)
+
+Enemy
+- enemies (midget, big guys, aerial enemies)
+- A* ?
+
+
+Game
+- limited waves
+- UI
+	- start/pause/end/controls screen
+- Audio (music, sfx)
+- particle effects
+
+
+
+
+
+
 --------------------
 Reference (similar games):
 -
@@ -14,8 +39,35 @@ Reference (similar games):
 --------------------
 Team Roles:
 
-Koen;
-Thorvald;
-Vincent;
+Koen; character creation + animation
+Thorvald; shooting behaviour
+Vincent; enemies (fly, spawn, pathfinding?)
 --------------------
 Art style:
+Low Poly
+--------------------
+Deadlines:
+25/8
+Koen; Character creation
+Thorvald; shooting behaviour
+Vincent; enemy spawn
+
+26/8
+Koen; Character animation
+Thorvald; shooting behaviour
+Vincent; wave implementation
+
+27/8
+Koen; environment
+Thorvald; pick ups
+Vincent; enemy pathfinding
+
+28/8
+Koen; environment + game end limit (copied from other project)
+Thorvald; Audio + particle
+Vincent; UI
+
++ Ads
+
+29/8
+Gamejam Deadline
