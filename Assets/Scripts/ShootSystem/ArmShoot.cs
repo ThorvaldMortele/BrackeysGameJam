@@ -1,14 +1,11 @@
-﻿using ShootSystem;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using GameSystem.Enemies;
 
 namespace ShootSystem
 {
     public class ArmShoot : MonoBehaviour
     {
-        public float Damage = 10f;
+        public int Damage = 10;
         public float Range = 100f;
         public float FireRate = 10f;
         public float NextTimeToFire;
@@ -29,12 +26,13 @@ namespace ShootSystem
         {
             RaycastHit hit;
             if (Physics.Raycast(FpsCam.transform.position, FpsCam.transform.forward, out hit, Range))
-            {
-                Target target = hit.transform.GetComponent<Target>();
-                if (target != null)
+            {              
+                GameObject go = hit.transform.gameObject;
+                if (go != null && go.tag == "Enemy")
                 {
-                    target.TakeDamage(Damage);
-                    Debug.Log("aw");
+                    go.GetComponent<EnemyBase>().TakeDamage(Damage);
+
+                    Debug.Log("Enemy");
                 }
             }
         }

@@ -8,6 +8,8 @@ namespace MoveSystem
     {
         public CharacterController Controller;
 
+        //public Vector3 PlayerPosition? -> enemy's destination
+
         public float Speed = 10f;
         public float Gravity = -9.81f;
         public float JumpHeight = 3;

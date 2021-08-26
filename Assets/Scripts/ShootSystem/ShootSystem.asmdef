@@ -1,3 +1,15 @@
-﻿{
-	"name": "ShootSystem"
+{
+    "name": "ShootSystem",
+    "references": [
+        "GUID:047674f58d7bcfb418e8d98283f19679"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
