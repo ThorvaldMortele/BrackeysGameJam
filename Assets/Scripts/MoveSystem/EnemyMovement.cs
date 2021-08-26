@@ -98,29 +98,38 @@ namespace MoveSystem
 
         private void MovementZ()
         {
-            //var zPosition = Player.position.z - transform.forward.z; //target lcatoin          
-            //zPosition += flyingSpeed * _time;
-
-            //LookAtPlayer();
-            //var targetlocation = Player.position - transform.position;
-            //float distance = targetlocation.magnitude;
-
-
-            //rb.AddRelativeForce(Vector3.forward * Mathf.Clamp((distance /*- 10*/) / 50, 0f, 1f) * 1000f);
-
-
             LookAtPlayer();
-            var targetLocation = Player.position - transform.position;
-            float distanceFromTarget = targetLocation.magnitude;
 
+
+            //Get enemy location
+            //Get player location
+            //Get the distance between both
+            //if distance is bigger than x amount
+            //then add force to the enemy to move forward
+            //movement should be based on the movement speed parameter
+
+            var playerLocation = Player.position;
+            var enemyLocation = transform.position;
+
+            var distance = (playerLocation - enemyLocation).magnitude;
+
+            if (distance >= 10)
+            {
+
+                var newPosition = transform.forward * flyingSpeed * _time;
+                newPosition.y = 5;
+
+                transform.position = newPosition;
+            }
+            else
+            {
+                //stop the enemy, so that it keeps a little distance from the player
+             
+                //NEED TO CHANGE: when the player goes backwards after the enemy has stopped, the enemy teleports
             
-
-
-
-            var test = transform.forward * Mathf.Clamp(distanceFromTarget / 5, 0f, 1f) * 10f;
-
-
-            var movement = transform.position + test;
+            
+                //make the attack range bigger than this tho so it can still attack
+            }
         }
     }
 }
