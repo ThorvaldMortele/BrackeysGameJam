@@ -10,6 +10,12 @@ namespace MoveSystem
 
         [SerializeField]
         private Animator _characterAnimator;
+        private string _currentState;
+
+        const string PLAYER_IDLE = "Take_Idle";
+        const string PLAYER_RUN = "Take_Run";
+
+
 
         //public Vector3 PlayerPosition? -> enemy's destination
 
@@ -41,16 +47,16 @@ namespace MoveSystem
             {
                 if (_isGrounded)
                 {
-                    _characterAnimator.SetBool("IsMoving", true);
+                    ChangeAnimationState(PLAYER_RUN);
                 }
                 else
                 {
-                    _characterAnimator.SetBool("IsMoving", false);
+                    ChangeAnimationState(PLAYER_IDLE);
                 }
             }
             else
             {
-                _characterAnimator.SetBool("IsMoving", false);
+                ChangeAnimationState(PLAYER_IDLE);
             }
 
 
@@ -66,6 +72,20 @@ namespace MoveSystem
             _velocity.y += Gravity * Time.deltaTime;
 
             Controller.Move(_velocity * Time.deltaTime);
+        }
+
+
+
+        void ChangeAnimationState(string newState)
+        {
+            // stop animation from interrupting itself
+            if (_currentState == newState) return;
+
+            // play the animation
+            _characterAnimator.Play(newState,1);
+
+            // reassign the current state
+            _currentState = newState;
         }
     }
 }

@@ -9,6 +9,7 @@ namespace ShootSystem
         [SerializeField]
         private Animator _characterAnimator;
 
+        const string PLAYER_SHOOT = "Take_Shoot";
 
         public int Damage = 10;
         public float Range = 100f;
@@ -26,16 +27,10 @@ namespace ShootSystem
                 NextTimeToFire = Time.time + 1 / FireRate;
                 Shoot();
 
-                _characterAnimator.SetTrigger("Shoot");
-
-                if (_characterAnimator.GetCurrentAnimatorStateInfo(2).IsName("Take_Shoot"))
-                {
-                    Debug.Log("animing");
-                }
+                ChangeAnimationState(PLAYER_SHOOT);
             }
-
-            //Debug.Log(_characterAnimator.GetCurrentAnimatorClipInfo(1)[0].clip.);
         }
+
 
         IEnumerator RemoveBullet(GameObject bullet)
         {
@@ -78,6 +73,14 @@ namespace ShootSystem
             }
 
             StartCoroutine(RemoveBullet(bullet));
+        }
+
+
+
+        void ChangeAnimationState(string newState)
+        {
+            // play the animation
+            _characterAnimator.Play(newState, 0, 0); // first 0 is layer in animator, second 0 is setting animation at 0 seconds (restart)
         }
     }
 }
