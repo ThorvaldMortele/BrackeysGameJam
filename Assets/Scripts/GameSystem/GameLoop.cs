@@ -1,8 +1,26 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class GameLoop : MonoBehaviour
+namespace GameSystem
 {
-    //Get a Time.deltatime parameter, so that not every enemy calculates one
+    public class GameLoop : MonoBehaviour
+    {
+        private bool gameHasEnded = false;
+        public float restartDelay = 2f;
+
+        public void EndGame()
+        {
+            if(gameHasEnded == false)
+            {
+                gameHasEnded = true;
+                Debug.Log("Game Over");
+                Invoke("RestartGame", restartDelay);
+            }            
+        }
+
+        void RestartGame()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+    }
 }
