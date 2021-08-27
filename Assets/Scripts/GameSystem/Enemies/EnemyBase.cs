@@ -9,7 +9,7 @@ namespace GameSystem.Enemies
     public class EnemyBase : MonoBehaviour
     {
         public int HP;
-        public int MovementSpeed;
+        //public int MovementSpeed;
 
         public void TakeDamage(int amount)
         {
