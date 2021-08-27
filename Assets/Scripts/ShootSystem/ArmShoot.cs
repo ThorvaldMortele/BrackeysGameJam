@@ -45,7 +45,7 @@ namespace ShootSystem
         {
             RaycastHit hit;
 
-            var bullet = ObjectPool.Instance.GetPooledObject();  /*Instantiate(Bullet, this.transform.position + transform.up, Quaternion.identity);*/
+            var bullet = ObjectPool.Instance.GetPooledObject();  
             if (bullet != null)
             {
                 bullet.transform.position = this.transform.position + transform.up;
@@ -57,7 +57,6 @@ namespace ShootSystem
 
             bulletRB.velocity = Vector3.zero;  // This fixed the shooting (bullets still had an original velocity on them, thats why they shot amiss)
             bulletRB.AddForce(transform.up * BulletSpeed, ForceMode.Impulse);
-
 
 
             if (Physics.Raycast(FpsCam.transform.position, FpsCam.transform.forward, out hit, Range))
