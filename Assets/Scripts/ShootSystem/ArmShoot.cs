@@ -79,7 +79,7 @@ namespace ShootSystem
         void ChangeAnimationState(string newState)
         {
             // play the animation
-            _characterAnimator.Play(newState, 0, 0); // first 0 is layer in animator, second 0 is setting animation at 0 seconds (restart)
+            _characterAnimator.Play(newState, 2, 0); // 2 is layer in animator, second 0 is setting animation at 0 seconds (restart)
         }
     }
 }
