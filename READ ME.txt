@@ -58,14 +58,14 @@ Thorvald; shooting behaviour
 Vincent; wave implementation
 
 27/8
-Koen; environment
+Koen;
 Thorvald; pick ups
 Vincent; enemy pathfinding
 
 28/8
-Koen; environment + game end limit (copied from other project)
-Thorvald; Audio + particle
-Vincent; UI
+Koen; game end limit (copied from other project) + damage
+Thorvald; Audio
+Vincent; UI + Arena textures + wave set up (fill in variables)
 
 + Ads
 
