@@ -6,6 +6,10 @@ namespace ShootSystem
 {
     public class ArmShoot : MonoBehaviour
     {
+        [SerializeField]
+        private Animator _characterAnimator;
+
+
         public int Damage = 10;
         public float Range = 100f;
         public float FireRate = 10f;
@@ -21,7 +25,16 @@ namespace ShootSystem
             {
                 NextTimeToFire = Time.time + 1 / FireRate;
                 Shoot();
+
+                _characterAnimator.SetTrigger("Shoot");
+
+                if (_characterAnimator.GetCurrentAnimatorStateInfo(2).IsName("Take_Shoot"))
+                {
+                    Debug.Log("animing");
+                }
             }
+
+            //Debug.Log(_characterAnimator.GetCurrentAnimatorClipInfo(1)[0].clip.);
         }
 
         IEnumerator RemoveBullet(GameObject bullet)
@@ -46,7 +59,11 @@ namespace ShootSystem
             }
 
             var bulletRB = bullet.GetComponent<Rigidbody>();
+
+            bulletRB.velocity = Vector3.zero;  // This fixed the shooting (bullets still had an original velocity on them, thats why they shot amiss)
             bulletRB.AddForce(transform.up * BulletSpeed, ForceMode.Impulse);
+
+
 
             if (Physics.Raycast(FpsCam.transform.position, FpsCam.transform.forward, out hit, Range))
             {              

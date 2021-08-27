@@ -8,6 +8,9 @@ namespace MoveSystem
     {
         public CharacterController Controller;
 
+        [SerializeField]
+        private Animator _characterAnimator;
+
         //public Vector3 PlayerPosition? -> enemy's destination
 
         public float Speed = 10f;
@@ -26,13 +29,30 @@ namespace MoveSystem
         {
             _isGrounded = Physics.CheckSphere(GroundCheck.position, GroundDist, GroundMask);
 
-            if (_isGrounded && _velocity.y < 0)
+            if (_isGrounded && _velocity.y < 0)  
             {
                 _velocity.y = -2f;
             }
 
             float x = Input.GetAxis("Horizontal");
             float z = Input.GetAxis("Vertical");
+
+            if (x != 0 || z != 0) // if movement input exists...
+            {
+                if (_isGrounded)
+                {
+                    _characterAnimator.SetBool("IsMoving", true);
+                }
+                else
+                {
+                    _characterAnimator.SetBool("IsMoving", false);
+                }
+            }
+            else
+            {
+                _characterAnimator.SetBool("IsMoving", false);
+            }
+
 
             Vector3 move = transform.right * x + transform.forward * z;
 

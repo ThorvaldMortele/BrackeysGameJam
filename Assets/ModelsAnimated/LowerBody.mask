@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LowerBody
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Character
+    m_Weight: 0
+  - m_Path: Hip_Bone
+    m_Weight: 0
+  - m_Path: Hip_Bone/Bowl_Bone
+    m_Weight: 0
+  - m_Path: Hip_Bone/Bowl_Bone/R_Arm_Bone001
+    m_Weight: 0
+  - m_Path: Hip_Bone/Bowl_Bone/R_Arm_Bone001/R_Arm_Bone002
+    m_Weight: 0
+  - m_Path: Hip_Bone/Bowl_Bone/R_Arm_Bone001/R_Arm_Bone002/R_Arm_Bone003
+    m_Weight: 0
+  - m_Path: Hip_Bone/Bowl_Bone/R_Arm_Bone001/R_Arm_Bone002/R_Arm_Bone003/R_Arm_Bone004
+    m_Weight: 0
+  - m_Path: Hip_Bone/Bowl_Bone/R_Arm_Bone001/R_Arm_Bone002/R_Arm_Bone003/R_Arm_Bone004/Claw_Bottom_Bone
+    m_Weight: 0
+  - m_Path: Hip_Bone/Bowl_Bone/R_Arm_Bone001/R_Arm_Bone002/R_Arm_Bone003/R_Arm_Bone004/Claw_Bottom_Bone/Claw_Barrel_Bone
+    m_Weight: 0
+  - m_Path: Hip_Bone/Bowl_Bone/R_Arm_Bone001/R_Arm_Bone002/R_Arm_Bone003/R_Arm_Bone004/Claw_Bottom_Bone/Claw_Top_Bone
+    m_Weight: 0
+  - m_Path: Hip_Bone/LF_Leg_Bone001
+    m_Weight: 1
+  - m_Path: Hip_Bone/LF_Leg_Bone001/LF_Leg_Bone002
+    m_Weight: 1
+  - m_Path: Hip_Bone/LF_Leg_Bone001/LF_Leg_Bone002/LF_Leg_Bone003
+    m_Weight: 1
+  - m_Path: Hip_Bone/LF_Leg_Bone001/LF_Leg_Bone002/LF_Leg_Bone003/LF_Leg_Bone004
+    m_Weight: 1
+  - m_Path: Hip_Bone/LH_Leg_Bone001
+    m_Weight: 1
+  - m_Path: Hip_Bone/LH_Leg_Bone001/LH_Leg_Bone002
+    m_Weight: 1
+  - m_Path: Hip_Bone/LH_Leg_Bone001/LH_Leg_Bone002/LH_Leg_Bone003
+    m_Weight: 1
+  - m_Path: Hip_Bone/LH_Leg_Bone001/LH_Leg_Bone002/LH_Leg_Bone003/LH_Leg_Bone004
+    m_Weight: 1
+  - m_Path: Hip_Bone/RF_Leg_Bone001
+    m_Weight: 1
+  - m_Path: Hip_Bone/RF_Leg_Bone001/RF_Leg_Bone002
+    m_Weight: 1
+  - m_Path: Hip_Bone/RF_Leg_Bone001/RF_Leg_Bone002/RF_Leg_Bone003
+    m_Weight: 1
+  - m_Path: Hip_Bone/RF_Leg_Bone001/RF_Leg_Bone002/RF_Leg_Bone003/RF_Leg_Bone004
+    m_Weight: 1
+  - m_Path: Hip_Bone/RH_Leg_Bone001
+    m_Weight: 1
+  - m_Path: Hip_Bone/RH_Leg_Bone001/RH_Leg_Bone002
+    m_Weight: 1
+  - m_Path: Hip_Bone/RH_Leg_Bone001/RH_Leg_Bone002/RH_Leg_Bone003
+    m_Weight: 1
+  - m_Path: Hip_Bone/RH_Leg_Bone001/RH_Leg_Bone002/RH_Leg_Bone003/RH_Leg_Bone004
+    m_Weight: 1
