@@ -20,6 +20,7 @@ namespace MoveSystem
         public float period = 2f;        
         public float amplitude = 0.7f;
         public float phase = 0f;
+
         private float _frequency;
         private float _angularFrequency;
 
@@ -31,27 +32,57 @@ namespace MoveSystem
 
         private void Update()
         {
+            LookAtPlayer();
+
             _time += Time.deltaTime;
 
-            //Movement();
+            //StartCoroutine("Movement"); //get a coroutine to get the time
 
-            MovementZ();
+            MoveTowardsPlayer();
+
+
+            //Movement();
+            //MovementZ();
         }
 
+        private void LookAtPlayer()
+        {
+            transform.LookAt(Player);
+        }
+
+        private void MoveTowardsPlayer() //A quick way to get the enemy to move to the player
+        {
+            //https://youtu.be/VAiMUZHtZyI
+
+            var playerLocation = Player.position; //Get enemy location
+            var enemyLocation = transform.position; //Get player location
+
+            enemyLocation.y = groundOffset;
+
+            var distance = (playerLocation - enemyLocation).magnitude; //Get the distance between both
+
+            var speed = 450f;
+            var stopDistance = 5f; //Distance from the player where it needs to stop
+
+            _rigidBody.AddRelativeForce(Vector3.forward * Mathf.Clamp((distance - stopDistance) / 35, 0f, 1f) * speed);
+        }
+
+
+        #region Currently not in use
         private void Movement()
         {            
             LookAtPlayer();
 
-            if (Flying)
+            if (Flying) //For flying enemies
             {
                 //Update location; X = Left/Right, Y = Up/Down, Z = Forward/Backward
                 var x = 0;
-                var y = SmoothSineWave() + groundOffset;
+                var y = SmoothSineWave() + groundOffset; //Sin wave with an offset above the ground
                 var z = 0;
 
                 transform.localPosition = new Vector3(x, y, z);
             }
-            else
+            else //For ground enemies
             {
                 //Update location; X = Left/Right, Y = Up/Down, Z = Forward/Backward
                 var x = 0;
@@ -60,8 +91,33 @@ namespace MoveSystem
 
                 transform.localPosition = new Vector3(x, y, z);
             }
-        }        
+        }
+        private void MovementZ()
+        {
+            var playerLocation = Player.position; //Get enemy location
+            var enemyLocation = transform.position; //Get player location
 
+            var distance = (playerLocation - enemyLocation).magnitude; //Get the distance between both
+
+            if (distance >= 10) //If distance is bigger than x amount
+            {
+                //Add force to the enemy to move forward
+                var newPosition = transform.forward * flyingSpeed * _time;
+                //newPosition.y = 5; //Keep it of the ground (since it's not using pure z axis yet
+
+                enemyLocation += newPosition;
+            }
+            else
+            {
+                //stop the enemy, so that it keeps a little distance from the player
+
+                //NEED TO CHANGE: when the player goes backwards after the enemy has stopped, the enemy teleports
+
+                enemyLocation += Vector3.zero;
+
+                //make the attack range bigger than this tho so it can still attack
+            }
+        }
         private float SmoothSineWave()
         {
             //https://answers.unity.com/questions/434717/how-to-make-a-sine-wave-with-a-transform.html
@@ -86,50 +142,6 @@ namespace MoveSystem
 
             return y;            
         }
-
-        private void LookAtPlayer()
-        {
-            transform.LookAt(Player);
-        }
-
-
-
-        
-
-        private void MovementZ()
-        {
-            LookAtPlayer();
-
-
-            //Get enemy location
-            //Get player location
-            //Get the distance between both
-            //if distance is bigger than x amount
-            //then add force to the enemy to move forward
-            //movement should be based on the movement speed parameter
-
-            var playerLocation = Player.position;
-            var enemyLocation = transform.position;
-
-            var distance = (playerLocation - enemyLocation).magnitude;
-
-            if (distance >= 10)
-            {
-
-                var newPosition = transform.forward * flyingSpeed * _time;
-                newPosition.y = 5;
-
-                transform.position = newPosition;
-            }
-            else
-            {
-                //stop the enemy, so that it keeps a little distance from the player
-             
-                //NEED TO CHANGE: when the player goes backwards after the enemy has stopped, the enemy teleports
-            
-            
-                //make the attack range bigger than this tho so it can still attack
-            }
-        }
+        #endregion
     }
 }
