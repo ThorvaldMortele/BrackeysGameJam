@@ -1150,6 +1150,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArenaWallEnemy North
       objectReference: {fileID: 0}
+    - target: {fileID: 9169536931915928859, guid: af7015b67137a4044a4e1b3a834020e4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af7015b67137a4044a4e1b3a834020e4, type: 3}
 --- !u!1 &385302119
@@ -2804,6 +2809,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArenaWallEnemy South
       objectReference: {fileID: 0}
+    - target: {fileID: 9169536931915928859, guid: af7015b67137a4044a4e1b3a834020e4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af7015b67137a4044a4e1b3a834020e4, type: 3}
 --- !u!4 &1171293926 stripped
@@ -3517,6 +3527,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArenaWallEnemy East
       objectReference: {fileID: 0}
+    - target: {fileID: 9169536931915928859, guid: af7015b67137a4044a4e1b3a834020e4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af7015b67137a4044a4e1b3a834020e4, type: 3}
 --- !u!4 &1498466975 stripped
@@ -3821,7 +3836,7 @@ Transform:
   m_GameObject: {fileID: 1555203890}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 12, y: 1, z: 12}
+  m_LocalScale: {x: 30, y: 1, z: 30}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 16
@@ -4191,6 +4206,90 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RampagePickup: {fileID: 4047725660100589634, guid: 7ebfadeead2c99e4e9333c06cbf0d672,
     type: 3}
+--- !u!1001 &1743883349
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: fd34839c5624c4f4a8fea9ccc9d6db6f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fd34839c5624c4f4a8fea9ccc9d6db6f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -12.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fd34839c5624c4f4a8fea9ccc9d6db6f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fd34839c5624c4f4a8fea9ccc9d6db6f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fd34839c5624c4f4a8fea9ccc9d6db6f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fd34839c5624c4f4a8fea9ccc9d6db6f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fd34839c5624c4f4a8fea9ccc9d6db6f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fd34839c5624c4f4a8fea9ccc9d6db6f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fd34839c5624c4f4a8fea9ccc9d6db6f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fd34839c5624c4f4a8fea9ccc9d6db6f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fd34839c5624c4f4a8fea9ccc9d6db6f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fd34839c5624c4f4a8fea9ccc9d6db6f,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fd34839c5624c4f4a8fea9ccc9d6db6f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fd34839c5624c4f4a8fea9ccc9d6db6f,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fd34839c5624c4f4a8fea9ccc9d6db6f,
+        type: 3}
+      propertyPath: m_Name
+      value: Dome
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fd34839c5624c4f4a8fea9ccc9d6db6f, type: 3}
 --- !u!1 &1784146188
 GameObject:
   m_ObjectHideFlags: 0
@@ -4892,6 +4991,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ArenaWallEnemy West
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169536931915928859, guid: af7015b67137a4044a4e1b3a834020e4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af7015b67137a4044a4e1b3a834020e4, type: 3}
