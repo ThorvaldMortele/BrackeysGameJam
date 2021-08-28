@@ -24,8 +24,6 @@ namespace GameSystem.Enemies
         }
 
 
-
-
         // for physics collisions
         public void TakeDamage(int amount, ContactPoint pointOfContact)
         {
@@ -41,6 +39,7 @@ namespace GameSystem.Enemies
                 Die();              
             }              
         }
+
         // for rayCast hits
         public void TakeDamage(int amount, Vector3 hitPosition)
         {
