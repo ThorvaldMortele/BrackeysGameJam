@@ -22,10 +22,13 @@ namespace GameSystem.EnemyWaveSystem
     public class WaveSpawner : MonoBehaviour
     {
         //https://youtu.be/Vrld13ypX_I
-        
+
+        [SerializeField]
+        private GameObject _waveCompletedText;
+
         public Wave[] waves;
         private int _index = 0; //Index of the wave
-
+               
         [SerializeField]
         private Transform[] _spawnPoints;
 
@@ -42,6 +45,8 @@ namespace GameSystem.EnemyWaveSystem
             {
                 Debug.LogError("No spawn points referenced");
             }
+
+            _waveCompletedText.SetActive(false);
 
             waveCountDown = timeBetweenWaves;    
         }
@@ -65,6 +70,8 @@ namespace GameSystem.EnemyWaveSystem
                 if (_state != SpawnState.Spawning) //Check if already spawning waves
                 {
                     StartCoroutine(SpawnWave(waves[_index]));
+
+                    //Spawning wave
                 }
             }
             else
@@ -75,6 +82,8 @@ namespace GameSystem.EnemyWaveSystem
 
         void BeginNewWave()
         {
+            ShowWaveCompletedText(true);
+
             _state = SpawnState.Counting;
             waveCountDown = timeBetweenWaves;
 
@@ -104,6 +113,8 @@ namespace GameSystem.EnemyWaveSystem
 
         IEnumerator SpawnWave(Wave wave)
         {
+            ShowWaveCompletedText(false);
+
             Debug.Log("Spawning wave: " + wave.name);
             _state = SpawnState.Spawning;
             
@@ -127,5 +138,20 @@ namespace GameSystem.EnemyWaveSystem
             Transform spawnpoint = _spawnPoints[Random.Range(0, _spawnPoints.Length)];
             Instantiate(enemy, spawnpoint.position, spawnpoint.rotation);    
         }
+
+        #region Game UI
+        private void ShowWaveCompletedText(bool activated)
+        {
+            if(activated)
+            {
+                _waveCompletedText.SetActive(true);
+            }
+            else
+            {
+                _waveCompletedText.SetActive(false);
+            }
+        }
+
+        #endregion
     }
 }
