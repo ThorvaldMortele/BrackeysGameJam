@@ -12,7 +12,9 @@ namespace ShootSystem
 
         public string PLAYER_SHOOT = "Take_Shoot";
 
-        public int Damage = 10;
+        public int LaserDamage = 5;
+        public int LaserPushStrength = 100; 
+
         public float Range = 100f;
         public float FireRate = 10f;
         public float BulletSpeed = 100f;
@@ -24,6 +26,7 @@ namespace ShootSystem
 
         public bool IsTriple;
         public bool IsRampage;
+        public bool IsLaser;
 
         private void Update()
         {
@@ -99,7 +102,7 @@ namespace ShootSystem
             //    GameObject go = hit.transform.gameObject;
             //    if (go != null && go.tag == "Enemy")
             //    {
-            //        go.GetComponent<EnemyBase>().TakeDamage(Damage, hit.point);
+            //        go.GetComponent<EnemyBase>().TakeDamage(LaserDamage, hit.point, LaserPushStrength);
 
             //        Debug.Log("Enemy");
             //    }
