@@ -10,6 +10,7 @@ namespace GameSystem
 {
     public class HealthBar : MonoBehaviour
     {
+        [SerializeField]
         private Slider _slider;
 
         private void Awake()
