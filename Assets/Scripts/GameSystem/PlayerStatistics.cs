@@ -48,6 +48,10 @@ namespace GameSystem
             //_deathCamera.transform.SetParent(null);
             //_mainCam.gameObject.SetActive(false);
 
+
+            //Freeze time
+            //activate the game over UI
+
             IsAlive = false;
 
             yield return new WaitForSeconds(5f);

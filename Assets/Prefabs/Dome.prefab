@@ -806,6 +806,7 @@ GameObject:
   - component: {fileID: 2117308045249249711}
   - component: {fileID: 752248061458373286}
   - component: {fileID: 6511802306588202671}
+  - component: {fileID: 7352023280721948932}
   m_Layer: 0
   m_Name: EnemySpawn (6)
   m_TagString: Untagged
@@ -853,6 +854,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7352023280721948932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 977074543633303817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b417b60f7b5861c4f803a7693fc71f71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1072780264749721965
 GameObject:
   m_ObjectHideFlags: 0
@@ -3183,7 +3196,7 @@ GameObject:
   - component: {fileID: 8983494340137149723}
   - component: {fileID: 9123697985548700399}
   - component: {fileID: 7769915315579003895}
-  - component: {fileID: 8802299571543461604}
+  - component: {fileID: 8636990977827550136}
   m_Layer: 0
   m_Name: EnemySpawn
   m_TagString: Untagged
@@ -3231,45 +3244,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &8802299571543461604
-MeshRenderer:
+--- !u!114 &8636990977827550136
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6740570719373325803}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 262797096535546508, guid: 5cbec63b29c7448428ef3ba9986479cc, type: 3}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b417b60f7b5861c4f803a7693fc71f71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6796903408549412928
 GameObject:
   m_ObjectHideFlags: 0
@@ -3480,6 +3466,7 @@ GameObject:
   - component: {fileID: 2929794340310660624}
   - component: {fileID: 7855507995844549008}
   - component: {fileID: 831097645962369968}
+  - component: {fileID: 5891315690870090541}
   m_Layer: 0
   m_Name: EnemySpawn (5)
   m_TagString: Untagged
@@ -3527,6 +3514,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5891315690870090541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6980954078429684637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b417b60f7b5861c4f803a7693fc71f71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7335790415778231575
 GameObject:
   m_ObjectHideFlags: 0
@@ -3644,6 +3643,7 @@ GameObject:
   - component: {fileID: 5705841645126263453}
   - component: {fileID: 6306106733977540683}
   - component: {fileID: 7219868821184058145}
+  - component: {fileID: 6741258098900197751}
   m_Layer: 0
   m_Name: EnemySpawn (4)
   m_TagString: Untagged
@@ -3691,6 +3691,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6741258098900197751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7389418999612547234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b417b60f7b5861c4f803a7693fc71f71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7442193798450848094
 GameObject:
   m_ObjectHideFlags: 0

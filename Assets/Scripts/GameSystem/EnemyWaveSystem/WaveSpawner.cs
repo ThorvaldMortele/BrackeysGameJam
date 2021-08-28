@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace GameSystem.EnemyWaveSystem
 {
@@ -25,6 +26,9 @@ namespace GameSystem.EnemyWaveSystem
 
         [SerializeField]
         private GameObject _waveCompletedText;
+        [SerializeField]
+        private Text _waitTimeText; 
+
 
         public Wave[] waves;
         private int _index = 0; //Index of the wave
@@ -145,6 +149,7 @@ namespace GameSystem.EnemyWaveSystem
             if(activated)
             {
                 _waveCompletedText.SetActive(true);
+                _waitTimeText.text = "Next wave in " + waveCountDown + " seconds";
             }
             else
             {
