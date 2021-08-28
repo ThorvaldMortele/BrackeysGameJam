@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace GameSystem.Upgrades
 { 
-    public class PickupBase : MonoBehaviour
+    public class PickupBase : PickupManager
     {
         public ArmShoot ArmShoot;
 

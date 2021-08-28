@@ -24,17 +24,24 @@ namespace GameSystem.Upgrades
 
             if (_timer >= _pickupSpawnRate)
             {
-                if (Pickups.Count <= _maxPickupCount)
+                var pickups = FindObjectsOfType<PickupBase>().ToList();
+                if (pickups.Count <= _maxPickupCount)
                 {
-                    SpawnPickup(Pickups[UnityEngine.Random.Range(0, Pickups.Count)]);
-                    _timer = 0;
+                    var randomNr = UnityEngine.Random.Range(0, 2);
+                    if (Pickups.Count != 0)
+                    {
+                        var pickup = Pickups[randomNr];
+
+                        SpawnPickup(pickup);
+                        _timer = 0;
+                    }
                 }
                 else return;
             }
         }
 
         private void SpawnPickup(GameObject pickup)
-        { 
+        {
             var spawnPos = new Vector3(
                 UnityEngine.Random.Range(-_pickupSpawnRange, _pickupSpawnRange),
                 1.25f,
