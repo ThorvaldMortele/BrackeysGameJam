@@ -29,6 +29,7 @@ namespace MoveSystem
 
         private Vector3 _velocity;
         private bool _isGrounded;
+        private bool _canLand;
 
         // Update is called once per frame
         void Update()
@@ -48,6 +49,11 @@ namespace MoveSystem
                 if (_isGrounded)
                 {
                     ChangeAnimationState(PLAYER_RUN);
+                    if (_canLand == true)
+                    {
+                        // play sound effect landing
+                        _canLand = false;
+                    }
                 }
                 else
                 {
@@ -67,6 +73,9 @@ namespace MoveSystem
             if (Input.GetButtonDown("Jump") && _isGrounded)
             {
                 _velocity.y = Mathf.Sqrt(JumpHeight * -2f * Gravity);
+
+                _canLand = true;
+                // play jump start sound effect
             }
 
             _velocity.y += Gravity * Time.deltaTime;

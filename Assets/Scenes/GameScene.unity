@@ -891,6 +891,11 @@ PrefabInstance:
       propertyPath: m_ClearFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2355030634888309864, guid: 0133970736176014d9091997a0c25796,
+        type: 3}
+      propertyPath: MouseSensitivity
+      value: 250
+      objectReference: {fileID: 0}
     - target: {fileID: 2355030636422579568, guid: 0133970736176014d9091997a0c25796,
         type: 3}
       propertyPath: m_LocalPosition.x
