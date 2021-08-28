@@ -9,6 +9,8 @@ namespace ShootSystem
     {
         [SerializeField]
         private int _damage;
+        [SerializeField]
+        private int _pushStrength;
 
         private HitSounds _hitSounds;
 
@@ -22,7 +24,7 @@ namespace ShootSystem
         {
             if (collision.gameObject.TryGetComponent(out EnemyBase enemyBase))
             {
-                enemyBase.TakeDamage(_damage, collision.GetContact(0));
+                enemyBase.TakeDamage(_damage, collision.GetContact(0), collision.relativeVelocity.normalized, _pushStrength);
 
                 _hitSounds.InstantiateSound(this.transform.position);
 

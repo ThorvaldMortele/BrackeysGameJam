@@ -76,6 +76,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 25
+  _pushStrength: 500
 --- !u!1001 &4832230338521783074
 PrefabInstance:
   m_ObjectHideFlags: 0

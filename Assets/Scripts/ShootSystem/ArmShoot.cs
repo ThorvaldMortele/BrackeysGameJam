@@ -50,29 +50,29 @@ namespace ShootSystem
 
         public virtual void ShootRampage()
         {
-            RaycastHit hit;
+            //RaycastHit hit;
 
             var bullet = SpawnBullet();
             
             // rayCast damage (might work for a laser or sumfin)
-            if (Physics.Raycast(FpsCam.transform.position, FpsCam.transform.forward, out hit, Range))
-            {
-                GameObject go = hit.transform.gameObject; 
-                if (go != null && go.tag == "Enemy")
-                {
-                    go.GetComponent<EnemyBase>().TakeDamage(Damage, hit.point);
+            //if (Physics.Raycast(FpsCam.transform.position, FpsCam.transform.forward, out hit, Range))
+            //{
+            //    GameObject go = hit.transform.gameObject; 
+            //    if (go != null && go.tag == "Enemy")
+            //    {
+            //        go.GetComponent<EnemyBase>().TakeDamage(Damage, hit.point);
 
-                    Debug.Log("Enemy");
-                }
+            //        Debug.Log("Enemy");
+            //    }
 
-            }
+            //}
 
             StartCoroutine(RemoveBullet(bullet));
         }
 
         public void ShootTriple()
         {
-            RaycastHit hit;
+            //RaycastHit hit;
 
             var bullets = new List<GameObject>();
             for (int i = 0; i < 3; i++)
@@ -93,18 +93,18 @@ namespace ShootSystem
                 bullets.Add(bullet);
             }
 
-            // rayCast damage (might work for a laser or sumfin)
-            if (Physics.Raycast(FpsCam.transform.position, FpsCam.transform.forward, out hit, Range))
-            {
-                GameObject go = hit.transform.gameObject;
-                if (go != null && go.tag == "Enemy")
-                {
-                    go.GetComponent<EnemyBase>().TakeDamage(Damage, hit.point);
+            //// rayCast damage (might work for a laser or sumfin)
+            //if (Physics.Raycast(FpsCam.transform.position, FpsCam.transform.forward, out hit, Range))
+            //{
+            //    GameObject go = hit.transform.gameObject;
+            //    if (go != null && go.tag == "Enemy")
+            //    {
+            //        go.GetComponent<EnemyBase>().TakeDamage(Damage, hit.point);
 
-                    Debug.Log("Enemy");
-                }
+            //        Debug.Log("Enemy");
+            //    }
 
-            }
+            //}
 
             for (int i = 0; i < 3; i++)
             {

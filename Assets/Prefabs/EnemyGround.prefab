@@ -48,12 +48,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33a3562033c6ab9429e20ce985ddc02e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 50
+  HP: 300
   EnemyScoreValue: 30
   HitParticle: {fileID: 1672073997217582953, guid: cb2cde70e9e1ec04bb6d018ea7c27c48,
     type: 3}
   DeathParticle: {fileID: 4051075545302277075, guid: 07114060ce67a8d4b96489e8eec8212d,
     type: 3}
+  CanGetShoved: 1
 --- !u!114 &7987161401708421169
 MonoBehaviour:
   m_ObjectHideFlags: 0

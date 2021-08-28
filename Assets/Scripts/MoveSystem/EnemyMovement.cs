@@ -40,8 +40,15 @@ namespace MoveSystem
 
             //StartCoroutine("Movement"); //get a coroutine to get the time
 
+            CalculateMoveTowardsPlayer();
+        }
+        private void FixedUpdate()
+        {
             MoveTowardsPlayer();
         }
+
+
+
 
         private void LookAtPlayer()
         {
@@ -49,7 +56,7 @@ namespace MoveSystem
             transform.LookAt(playerTransform);
         }
 
-        private void MoveTowardsPlayer() //A quick way to get the enemy to move to the player
+        private float CalculateMoveTowardsPlayer() //A quick way to get the enemy to move to the player
         {
             //https://youtu.be/VAiMUZHtZyI
 
@@ -63,7 +70,15 @@ namespace MoveSystem
             var speed = 450f;
             var stopDistance = 5f; //Distance from the player where it needs to stop
 
-            _rigidBody.AddRelativeForce(Vector3.forward * Mathf.Clamp((distance - stopDistance) / 35, 0f, 1f) * speed);
+            float clampedValue = Mathf.Clamp((distance - stopDistance)/35, 0f, 1f);
+
+            float calculatedSpeed = clampedValue * speed;
+
+            return calculatedSpeed;       
+        }
+        private void MoveTowardsPlayer()
+        {
+            _rigidBody.AddRelativeForce(Vector3.forward * CalculateMoveTowardsPlayer());
         }
 
 

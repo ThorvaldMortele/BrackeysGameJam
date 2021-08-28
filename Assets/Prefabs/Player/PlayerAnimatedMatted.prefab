@@ -530,9 +530,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Controller: {fileID: 2355030636422579569}
   _characterAnimator: {fileID: 2349398182666457099}
-  Speed: 10
-  Gravity: -29.43
-  JumpHeight: 6
+  Speed: 25
+  Gravity: -65
+  JumpHeight: 15
   GroundCheck: {fileID: 2355030635296187246}
   GroundDist: 0.4
   GroundMask:
@@ -582,6 +582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _characterAnimator: {fileID: 2349398182666457099}
+  PLAYER_SHOOT: Take_Shoot
   Damage: 10
   Range: 100
   FireRate: 10
@@ -589,6 +590,8 @@ MonoBehaviour:
   NextTimeToFire: 0
   FpsCam: {fileID: 2355030634888309863}
   Bullet: {fileID: 5974485147396127709, guid: 4003f8d76185456439f24fcccbc6b2d5, type: 3}
+  IsTriple: 0
+  IsRampage: 0
 --- !u!1 &2527927856393445312
 GameObject:
   m_ObjectHideFlags: 0
