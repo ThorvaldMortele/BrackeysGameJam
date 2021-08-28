@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0deebd840d4f3494ba79ba2807a5182d
+guid: 6f3571e31cf24ac4fa77ada8f2de63ab
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
@@ -7,28 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Black
-    second: {fileID: 2100000, guid: a7bda080004a56f4aac505f62c06146f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material
-    second: {fileID: 2100000, guid: c9a08ae33ae45d941b9f2a7446b07c5e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Owl_Brown
-    second: {fileID: 2100000, guid: 91d186b3eff075a408e79fa5150a3d4b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Owl_DarkBrown
-    second: {fileID: 2100000, guid: 4bcd5e5895805fc46b67bb727d654a26, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Yellow
-    second: {fileID: 2100000, guid: 64513669beff38b418223ef7c9aaef4e, type: 2}
+      name: No Name
+    second: {fileID: 2100000, guid: e341a35b3c88e824f8213bd8bac50a76, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
