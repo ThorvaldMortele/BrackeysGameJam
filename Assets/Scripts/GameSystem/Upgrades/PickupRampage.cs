@@ -28,7 +28,7 @@ namespace GameSystem.Upgrades
 
             ArmShoot.FireRate = _newFireRate;
 
-            GetComponent<MeshRenderer>().enabled = false;
+            GetComponentInChildren<MeshRenderer>().enabled = false;
             GetComponent<Collider>().enabled = false;
 
             yield return new WaitForSeconds(_duration);

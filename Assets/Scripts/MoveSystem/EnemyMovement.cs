@@ -41,6 +41,8 @@ namespace MoveSystem
             //StartCoroutine("Movement"); //get a coroutine to get the time
 
             CalculateMoveTowardsPlayer();
+
+            //MoveTowardsPlayer();
         }
         private void FixedUpdate()
         {
