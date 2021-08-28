@@ -111,6 +111,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6390069567807382832}
+  - component: {fileID: -5891677919573838146}
+  - component: {fileID: 3812034029913467115}
   m_Layer: 0
   m_Name: PowerupObjectRampage
   m_TagString: Untagged
@@ -133,3 +135,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-5891677919573838146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6390069567807382834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1253bd08eeebd1c4284b7baecef48125, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Pickups: []
+  PickupSpawnCheck:
+    serializedVersion: 2
+    m_Bits: 256
+  ArmShoot: {fileID: 0}
+  Duration: 3
+--- !u!65 &3812034029913467115
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6390069567807382834}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.6687055, y: 2.6556349, z: 2.5123541}
+  m_Center: {x: 0.06694919, y: 0.040713787, z: 0.029398322}

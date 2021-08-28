@@ -12,8 +12,9 @@ namespace ShootSystem
 
         public string PLAYER_SHOOT = "Take_Shoot";
 
-        public int LaserDamage = 5;
-        public int LaserPushStrength = 100; 
+        public int LaserDamage = 8;
+        public int LaserPushStrength = 100;
+        public int LaserLength = 40;
 
         public float Range = 100f;
         public float FireRate = 10f;
@@ -56,6 +57,8 @@ namespace ShootSystem
 
         public virtual void ShootRegular()
         {
+            LaserLine.SetPosition(0, Vector3.zero);
+            LaserLine.SetPosition(1, Vector3.zero);
             var bullet = SpawnBullet();
            
             StartCoroutine(RemoveBullet(bullet));
@@ -63,6 +66,9 @@ namespace ShootSystem
 
         public void ShootTriple()
         {
+            LaserLine.SetPosition(0, Vector3.zero);
+            LaserLine.SetPosition(1, Vector3.zero);
+
             var bullets = new List<GameObject>();
             for (int i = 0; i < 3; i++)
             {
@@ -92,23 +98,20 @@ namespace ShootSystem
         {
             RaycastHit hit;
 
+            LaserLine.SetPosition(0, this.transform.position);
+            LaserLine.SetPosition(LaserLine.positionCount - 1, transform.position + FpsCam.transform.forward * LaserLength);
+
+            LaserLine.startColor = Color.red;
+            LaserLine.endColor = Color.red;
+
             // rayCast damage (might work for a laser or sumfin)
-            if (Physics.Raycast(FpsCam.transform.position, FpsCam.transform.up, out hit, Range))
+            if (Physics.Raycast(FpsCam.transform.position, FpsCam.transform.forward, out hit, Range))
             {
-                Debug.DrawRay(FpsCam.transform.position, FpsCam.transform.up * 10, Color.red);
                 GameObject go = hit.transform.gameObject;
                 if (go != null && go.tag == "Enemy")
                 {
                     go.GetComponent<EnemyBase>().TakeDamage(LaserDamage, hit.point, LaserPushStrength);
-                    LaserLine.positionCount += 1;
-                    LaserLine.SetPosition(0, this.transform.position);
-
-                    LaserLine.positionCount += 1;
-                    LaserLine.SetPosition(1, hit.point);
-
-                    LaserLine.startColor = Color.red;
-                    LaserLine.endColor = Color.red;
-
+                    
                     Debug.Log("Enemy");
                 }
             }
