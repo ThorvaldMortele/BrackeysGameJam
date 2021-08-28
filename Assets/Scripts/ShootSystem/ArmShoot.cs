@@ -59,12 +59,13 @@ namespace ShootSystem
             bulletRB.AddForce(transform.up * BulletSpeed, ForceMode.Impulse);
 
 
+            // rayCast damage (might work for a laser or sumfin)
             if (Physics.Raycast(FpsCam.transform.position, FpsCam.transform.forward, out hit, Range))
             {              
                 GameObject go = hit.transform.gameObject;
                 if (go != null && go.tag == "Enemy")
                 {
-                    go.GetComponent<EnemyBase>().TakeDamage(Damage);
+                    go.GetComponent<EnemyBase>().TakeDamage(Damage, hit.point);
 
                     Debug.Log("Enemy");
                 }
