@@ -1851,7 +1851,7 @@ MonoBehaviour:
   PooledObjects: []
   ObjectToPool: {fileID: 5974485147396127709, guid: 4003f8d76185456439f24fcccbc6b2d5,
     type: 3}
-  AmountToPool: 40
+  AmountToPool: 60
 --- !u!4 &797183394
 Transform:
   m_ObjectHideFlags: 0

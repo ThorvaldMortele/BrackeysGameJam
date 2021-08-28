@@ -92,8 +92,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.8583459, y: 1.859652, z: 2.0815687}
+  m_Center: {x: -0.010366738, y: -0.07415414, z: -0.04885888}
 --- !u!114 &-1627403546728009336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,12 +106,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9bb257e2218be489ee97efe586f667, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _characterAnimator: {fileID: 0}
-  PLAYER_SHOOT: Take_Shoot
-  Damage: 10
-  Range: 100
-  FireRate: 10
-  BulletSpeed: 100
-  NextTimeToFire: 0
-  FpsCam: {fileID: 0}
-  Bullet: {fileID: 0}
+  ArmShoot: {fileID: 0}

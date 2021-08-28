@@ -12,14 +12,20 @@ namespace GameSystem.Upgrades
 
         public override void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("Player"))
+            if (!ArmShoot.IsRampage && !ArmShoot.IsTriple)
             {
-                StartCoroutine(ApplyEffect());
+                if (other.CompareTag("Player"))
+                {
+                    StartCoroutine(ApplyEffect());
+                }
             }
+            else return;
         }
 
         private IEnumerator ApplyEffect()
         {
+            SetRampage();
+
             ArmShoot.FireRate = _newFireRate;
 
             GetComponent<MeshRenderer>().enabled = false;
@@ -29,7 +35,22 @@ namespace GameSystem.Upgrades
 
             ArmShoot.FireRate = 10f;
 
+            DeactivateShooting();
+
             Destroy(this.gameObject);
         }
+
+        private void DeactivateShooting()
+        {
+            ArmShoot.IsRampage = false;
+            ArmShoot.IsTriple = false;
+        }
+
+        private void SetRampage()
+        {
+            ArmShoot.IsRampage = true;
+            ArmShoot.IsTriple = false;
+        }
+
     }
 }

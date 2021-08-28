@@ -30,8 +30,9 @@ namespace ShootSystem
             if (Input.GetButton("Fire1") && Time.time >= NextTimeToFire)
             {
                 NextTimeToFire = Time.time + 1 / FireRate;
-                //if ()
-                Shoot();
+
+                if (IsTriple) ShootTriple();
+                else ShootRampage();
 
                 ChangeAnimationState(PLAYER_SHOOT);
             }
@@ -47,7 +48,7 @@ namespace ShootSystem
             bullet.transform.rotation = this.transform.rotation;
         }
 
-        public virtual void Shoot()
+        public virtual void ShootRampage()
         {
             RaycastHit hit;
 
@@ -69,7 +70,7 @@ namespace ShootSystem
             StartCoroutine(RemoveBullet(bullet));
         }
 
-        public void Shoot2()
+        public void ShootTriple()
         {
             RaycastHit hit;
 
