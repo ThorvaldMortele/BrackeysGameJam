@@ -45,23 +45,11 @@ namespace ShootSystem
         {
             RaycastHit hit;
 
-            var bullet = ObjectPool.Instance.GetPooledObject();  
-            if (bullet != null)
-            {
-                bullet.transform.position = this.transform.position + transform.up;
-                bullet.transform.rotation = this.transform.rotation;
-                bullet.SetActive(true);
-            }
-
-            var bulletRB = bullet.GetComponent<Rigidbody>();
-
-            bulletRB.velocity = Vector3.zero;  // This fixed the shooting (bullets still had an original velocity on them, thats why they shot amiss)
-            bulletRB.AddForce(transform.up * BulletSpeed, ForceMode.Impulse);
-
+            GameObject bullet = SpawnBullet();
 
             // rayCast damage (might work for a laser or sumfin)
             if (Physics.Raycast(FpsCam.transform.position, FpsCam.transform.forward, out hit, Range))
-            {              
+            {
                 GameObject go = hit.transform.gameObject;
                 if (go != null && go.tag == "Enemy")
                 {
@@ -75,7 +63,22 @@ namespace ShootSystem
             StartCoroutine(RemoveBullet(bullet));
         }
 
+        private GameObject SpawnBullet()
+        {
+            var bullet = ObjectPool.Instance.GetPooledObject();
+            if (bullet != null)
+            {
+                bullet.transform.position = this.transform.position + transform.up;
+                bullet.transform.rotation = this.transform.rotation;
+                bullet.SetActive(true);
+            }
 
+            var bulletRB = bullet.GetComponent<Rigidbody>();
+
+            bulletRB.velocity = Vector3.zero;  // This fixed the shooting (bullets still had an original velocity on them, thats why they shot amiss)
+            bulletRB.AddForce(transform.up * BulletSpeed, ForceMode.Impulse);
+            return bullet;
+        }
 
         void ChangeAnimationState(string newState)
         {

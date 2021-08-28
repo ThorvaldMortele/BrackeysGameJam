@@ -16,13 +16,7 @@ namespace GameSystem.Upgrades
         private float _pickupSpawnRate = 3;
         private float _maxPickupCount = 15;
 
-        public GameObject RampagePickup;
-        private List<PickupBase> _pickups;
-
-        private void Awake()
-        {
-            _pickups = FindObjectsOfType<PickupBase>().ToList();
-        }
+        public List<GameObject> Pickups;
 
         private void Update()
         {
@@ -30,23 +24,23 @@ namespace GameSystem.Upgrades
 
             if (_timer >= _pickupSpawnRate)
             {
-                _pickups = FindObjectsOfType<PickupBase>().ToList();
-                if (_pickups.Count <= _maxPickupCount)
+                if (Pickups.Count <= _maxPickupCount)
                 {
-                    SpawnPickup();
+                    SpawnPickup(Pickups[UnityEngine.Random.Range(0, Pickups.Count - 1)]);
                     _timer = 0;
                 }
+                else return;
             }
         }
 
-        private void SpawnPickup()
+        private void SpawnPickup(GameObject pickup)
         { 
             var spawnPos = new Vector3(
                 UnityEngine.Random.Range(-_pickupSpawnRange, _pickupSpawnRange),
                 1.25f,
                 UnityEngine.Random.Range(-_pickupSpawnRange, _pickupSpawnRange));
 
-            var go = Instantiate(RampagePickup, spawnPos, Quaternion.identity);
+            var go = Instantiate(pickup, spawnPos, Quaternion.identity);
 
             go.GetComponent<PickupRampage>().ArmShoot = FindObjectOfType<ArmShoot>();
         }
