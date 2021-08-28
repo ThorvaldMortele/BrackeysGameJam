@@ -17,6 +17,8 @@ namespace GameSystem.Upgrades
         private float _maxPickupCount = 15;
 
         public List<GameObject> Pickups;
+        public LayerMask PickupSpawnCheck;
+        private Vector3 _offset = new Vector3(0, 2, 0);
 
         private void Update()
         {
@@ -42,15 +44,19 @@ namespace GameSystem.Upgrades
 
         private void SpawnPickup(GameObject pickup)
         {
+            RaycastHit hit;
+
             var spawnPos = new Vector3(
                 UnityEngine.Random.Range(-_pickupSpawnRange, _pickupSpawnRange),
-                1.25f,
+                15,
                 UnityEngine.Random.Range(-_pickupSpawnRange, _pickupSpawnRange));
 
-            var go = Instantiate(pickup, spawnPos, Quaternion.identity);
+            if (Physics.Raycast(spawnPos, -transform.up, out hit, 50f, PickupSpawnCheck))
+            {
+                var go = Instantiate(pickup, hit.point + _offset, Quaternion.identity);
 
-            go.GetComponent<PickupBase>().ArmShoot = FindObjectOfType<ArmShoot>();
-
+                go.GetComponent<PickupBase>().ArmShoot = FindObjectOfType<ArmShoot>();
+            }
         }
     }
 }

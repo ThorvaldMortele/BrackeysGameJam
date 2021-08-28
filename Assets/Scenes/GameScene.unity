@@ -4219,6 +4219,9 @@ MonoBehaviour:
   Pickups:
   - {fileID: 4047725660100589634, guid: 7ebfadeead2c99e4e9333c06cbf0d672, type: 3}
   - {fileID: 1394635284002087796, guid: 9b661e8a36d91ad4785816d26e38bf5e, type: 3}
+  PickupSpawnCheck:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &1784146188
 GameObject:
   m_ObjectHideFlags: 0
