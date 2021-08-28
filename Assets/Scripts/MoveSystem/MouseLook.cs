@@ -6,7 +6,7 @@ namespace MoveSystem
 {
     public class MouseLook : MonoBehaviour
     {
-        public float MouseSensitivity = 100f;
+        public float MouseSensitivity = 100;
         public Transform PlayerBody;
         private float _xRotation = 0f;
 

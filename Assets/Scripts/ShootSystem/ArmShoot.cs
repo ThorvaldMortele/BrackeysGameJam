@@ -30,7 +30,7 @@ namespace ShootSystem
             if (Input.GetButton("Fire1") && Time.time >= NextTimeToFire)
             {
                 NextTimeToFire = Time.time + 1 / FireRate;
-                if ()
+                //if ()
                 Shoot();
 
                 ChangeAnimationState(PLAYER_SHOOT);
@@ -56,7 +56,7 @@ namespace ShootSystem
             // rayCast damage (might work for a laser or sumfin)
             if (Physics.Raycast(FpsCam.transform.position, FpsCam.transform.forward, out hit, Range))
             {
-                GameObject go = hit.transform.gameObject;
+                GameObject go = hit.transform.gameObject; 
                 if (go != null && go.tag == "Enemy")
                 {
                     go.GetComponent<EnemyBase>().TakeDamage(Damage, hit.point);
@@ -80,7 +80,7 @@ namespace ShootSystem
                 if (bullet != null)
                 {
                     bullet.transform.position = this.transform.position + transform.up;
-                    bullet.transform.rotation = this.transform.rotation * Quaternion.Euler((-1 + i) * 4, 0, 0); ;
+                    bullet.transform.rotation = this.transform.rotation * Quaternion.Euler((-1 + i) * 8, 0, 0); 
                     bullet.SetActive(true);
                 }
 
