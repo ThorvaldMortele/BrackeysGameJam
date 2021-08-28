@@ -29,7 +29,7 @@ namespace GameSystem.Upgrades
                 var pickups = FindObjectsOfType<PickupBase>().ToList();
                 if (pickups.Count <= _maxPickupCount)
                 {
-                    var randomNr = UnityEngine.Random.Range(0, 2);
+                    var randomNr = UnityEngine.Random.Range(0, 3);
                     if (Pickups.Count != 0)
                     {
                         var pickup = Pickups[randomNr];

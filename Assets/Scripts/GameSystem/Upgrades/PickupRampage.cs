@@ -7,12 +7,11 @@ namespace GameSystem.Upgrades
 {
     public class PickupRampage : PickupBase
     {
-        private float _duration = 3f;
         private float _newFireRate = 20f;
 
         public override void OnTriggerEnter(Collider other)
         {
-            if (!ArmShoot.IsRampage && !ArmShoot.IsTriple)
+            if (!ArmShoot.IsRampage && !ArmShoot.IsTriple && !ArmShoot.IsLaser)
             {
                 if (other.CompareTag("Player"))
                 {
@@ -31,26 +30,18 @@ namespace GameSystem.Upgrades
             GetComponentInChildren<MeshRenderer>().enabled = false;
             GetComponent<Collider>().enabled = false;
 
-            yield return new WaitForSeconds(_duration);
-
-            ArmShoot.FireRate = 10f;
+            yield return new WaitForSeconds(Duration);
 
             DeactivateShooting();
 
             Destroy(this.gameObject);
         }
 
-        private void DeactivateShooting()
-        {
-            ArmShoot.IsRampage = false;
-            ArmShoot.IsTriple = false;
-        }
-
         private void SetRampage()
         {
             ArmShoot.IsRampage = true;
             ArmShoot.IsTriple = false;
+            ArmShoot.IsLaser = false;
         }
-
     }
 }

@@ -18,7 +18,7 @@ namespace ShootSystem
         public float Range = 100f;
         public float FireRate = 10f;
         public float BulletSpeed = 100f;
-        private float _spreadAngle = 3f;
+        //private float _spreadAngle = 3f;
         public float NextTimeToFire;
 
         public Camera FpsCam;
@@ -28,6 +28,8 @@ namespace ShootSystem
         public bool IsRampage;
         public bool IsLaser;
 
+        public LineRenderer LaserLine;
+
         private void Update()
         {
             if (Input.GetButton("Fire1") && Time.time >= NextTimeToFire)
@@ -35,7 +37,8 @@ namespace ShootSystem
                 NextTimeToFire = Time.time + 1 / FireRate;
 
                 if (IsTriple) ShootTriple();
-                else ShootRampage();
+                else if (IsLaser) ShootLaser();
+                else ShootRegular();
 
                 ChangeAnimationState(PLAYER_SHOOT);
             }
@@ -51,32 +54,15 @@ namespace ShootSystem
             bullet.transform.rotation = this.transform.rotation;
         }
 
-        public virtual void ShootRampage()
+        public virtual void ShootRegular()
         {
-            //RaycastHit hit;
-
             var bullet = SpawnBullet();
-            
-            // rayCast damage (might work for a laser or sumfin)
-            //if (Physics.Raycast(FpsCam.transform.position, FpsCam.transform.forward, out hit, Range))
-            //{
-            //    GameObject go = hit.transform.gameObject; 
-            //    if (go != null && go.tag == "Enemy")
-            //    {
-            //        go.GetComponent<EnemyBase>().TakeDamage(Damage, hit.point);
-
-            //        Debug.Log("Enemy");
-            //    }
-
-            //}
-
+           
             StartCoroutine(RemoveBullet(bullet));
         }
 
         public void ShootTriple()
         {
-            //RaycastHit hit;
-
             var bullets = new List<GameObject>();
             for (int i = 0; i < 3; i++)
             {
@@ -96,22 +82,35 @@ namespace ShootSystem
                 bullets.Add(bullet);
             }
 
-            //// rayCast damage (might work for a laser or sumfin)
-            //if (Physics.Raycast(FpsCam.transform.position, FpsCam.transform.forward, out hit, Range))
-            //{
-            //    GameObject go = hit.transform.gameObject;
-            //    if (go != null && go.tag == "Enemy")
-            //    {
-            //        go.GetComponent<EnemyBase>().TakeDamage(LaserDamage, hit.point, LaserPushStrength);
-
-            //        Debug.Log("Enemy");
-            //    }
-
-            //}
-
             for (int i = 0; i < 3; i++)
             {
                 StartCoroutine(RemoveBullet(bullets[i]));
+            }
+        }
+
+        private void ShootLaser()
+        {
+            RaycastHit hit;
+
+            // rayCast damage (might work for a laser or sumfin)
+            if (Physics.Raycast(FpsCam.transform.position, FpsCam.transform.up, out hit, Range))
+            {
+                Debug.DrawRay(FpsCam.transform.position, FpsCam.transform.up * 10, Color.red);
+                GameObject go = hit.transform.gameObject;
+                if (go != null && go.tag == "Enemy")
+                {
+                    go.GetComponent<EnemyBase>().TakeDamage(LaserDamage, hit.point, LaserPushStrength);
+                    LaserLine.positionCount += 1;
+                    LaserLine.SetPosition(0, this.transform.position);
+
+                    LaserLine.positionCount += 1;
+                    LaserLine.SetPosition(1, hit.point);
+
+                    LaserLine.startColor = Color.red;
+                    LaserLine.endColor = Color.red;
+
+                    Debug.Log("Enemy");
+                }
             }
         }
 
@@ -132,8 +131,6 @@ namespace ShootSystem
 
             return bullet;
         }
-
-        
 
         public void ChangeAnimationState(string newState)
         {

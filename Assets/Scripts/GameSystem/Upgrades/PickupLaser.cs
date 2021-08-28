@@ -1,6 +1,4 @@
-﻿using GameSystem.Enemies;
-using ShootSystem;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +8,8 @@ using UnityEngine;
 
 namespace GameSystem.Upgrades
 {
-    public class PickupTriple : PickupBase
+    public class PickupLaser : PickupBase
     {
-        
         public override void OnTriggerEnter(Collider other)
         {
             if (!ArmShoot.IsRampage && !ArmShoot.IsTriple && !ArmShoot.IsLaser)
@@ -27,11 +24,11 @@ namespace GameSystem.Upgrades
 
         private IEnumerator ApplyEffect()
         {
-            SetTriple();
+            SetLaser();
 
-            ArmShoot.FireRate = 6f;
+            ArmShoot.FireRate = 20f;
 
-            GetComponentInChildren<MeshRenderer>().enabled = false;
+            GetComponent<MeshRenderer>().enabled = false;
             GetComponent<Collider>().enabled = false;
 
             yield return new WaitForSeconds(Duration);
@@ -41,11 +38,11 @@ namespace GameSystem.Upgrades
             Destroy(this.gameObject);
         }
 
-        private void SetTriple()
+        private void SetLaser()
         {
-            ArmShoot.IsTriple = true;
+            ArmShoot.IsLaser = true;
             ArmShoot.IsRampage = false;
-            ArmShoot.IsLaser = false;
+            ArmShoot.IsTriple = false;
         }
     }
 }
