@@ -7,6 +7,9 @@ namespace GameSystem.Upgrades
 {
     public class PickupRampage : PickupBase
     {
+        private float _duration = 3f;
+        private float _newFireRate = 20f;
+
         public override void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player"))
@@ -17,12 +20,12 @@ namespace GameSystem.Upgrades
 
         private IEnumerator ApplyEffect()
         {
-            ArmShoot.FireRate = 20f;
+            ArmShoot.FireRate = _newFireRate;
 
             GetComponent<MeshRenderer>().enabled = false;
             GetComponent<Collider>().enabled = false;
 
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(_duration);
 
             ArmShoot.FireRate = 10f;
 

@@ -26,7 +26,7 @@ namespace GameSystem.Upgrades
             {
                 if (Pickups.Count <= _maxPickupCount)
                 {
-                    SpawnPickup(Pickups[UnityEngine.Random.Range(0, Pickups.Count - 1)]);
+                    SpawnPickup(Pickups[UnityEngine.Random.Range(0, Pickups.Count)]);
                     _timer = 0;
                 }
                 else return;
@@ -42,7 +42,8 @@ namespace GameSystem.Upgrades
 
             var go = Instantiate(pickup, spawnPos, Quaternion.identity);
 
-            go.GetComponent<PickupRampage>().ArmShoot = FindObjectOfType<ArmShoot>();
+            go.GetComponent<PickupBase>().ArmShoot = FindObjectOfType<ArmShoot>();
+
         }
     }
 }

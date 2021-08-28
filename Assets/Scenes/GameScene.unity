@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.17124073, g: 0.3474526, b: 0.79498756, a: 1}
+  m_IndirectSpecularColor: {r: 0.17128296, g: 0.3474996, b: 0.79498404, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -960,11 +960,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 2355030636422579570, guid: 0133970736176014d9091997a0c25796,
+    - target: {fileID: 2355030636667144014, guid: 0133970736176014d9091997a0c25796,
         type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1266670498}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0133970736176014d9091997a0c25796, type: 3}
 --- !u!4 &309238536 stripped
@@ -1916,6 +1916,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _characterAnimator: {fileID: 0}
+  PLAYER_SHOOT: Take_Shoot
   Damage: 10
   Range: 100
   FireRate: 10
@@ -2855,6 +2856,12 @@ Transform:
   m_Father: {fileID: 873561038}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1266670498 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2355030636422579568, guid: 0133970736176014d9091997a0c25796,
+    type: 3}
+  m_PrefabInstance: {fileID: 306229121}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1285122798
 GameObject:
   m_ObjectHideFlags: 0
@@ -3707,6 +3714,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _characterAnimator: {fileID: 597401771}
+  PLAYER_SHOOT: Take_Shoot
   Damage: 10
   Range: 100
   FireRate: 10
@@ -3997,6 +4005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Pickups:
   - {fileID: 4047725660100589634, guid: 7ebfadeead2c99e4e9333c06cbf0d672, type: 3}
+  - {fileID: 1394635284002087796, guid: 9b661e8a36d91ad4785816d26e38bf5e, type: 3}
 --- !u!1001 &1743883349
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4042,7 +4051,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: fd34839c5624c4f4a8fea9ccc9d6db6f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fd34839c5624c4f4a8fea9ccc9d6db6f,
         type: 3}
@@ -4081,8 +4090,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd34839c5624c4f4a8fea9ccc9d6db6f, type: 3}
-  RampagePickup: {fileID: 4047725660100589634, guid: 7ebfadeead2c99e4e9333c06cbf0d672,
-    type: 3}
 --- !u!1 &1784146188
 GameObject:
   m_ObjectHideFlags: 0
