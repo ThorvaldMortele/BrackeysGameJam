@@ -90,7 +90,7 @@ namespace MoveSystem
             {
                 _velocity.y = Mathf.Sqrt(JumpHeight * -2f * Gravity);
 
-                _canLand = true;
+                StartCoroutine(SetCanLandBool());
                 _playerSounds.PlaySoundEffect(2);
                 // play jump start sound effect
             }
@@ -98,6 +98,13 @@ namespace MoveSystem
             _velocity.y += Gravity * Time.deltaTime;
 
             Controller.Move(_velocity * Time.deltaTime);
+        }
+
+        IEnumerator SetCanLandBool()
+        {
+            yield return new WaitForSeconds(0.2f);
+
+            _canLand = true;
         }
 
 
