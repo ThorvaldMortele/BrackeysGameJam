@@ -16,6 +16,7 @@ namespace GameSystem.Upgrades
             {
                 if (other.CompareTag("Player"))
                 {
+                    PickupSoundScript.PlaySoundEffect(0);
                     StartCoroutine(ApplyEffect());
                 }
             }
