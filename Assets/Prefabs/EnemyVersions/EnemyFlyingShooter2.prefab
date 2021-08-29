@@ -216,7 +216,7 @@ MonoBehaviour:
   _bullet: {fileID: 8811802849578960247, guid: a3af8cee2b1979141a7bb3f8a4161c06, type: 3}
   _minTimer: 4
   _maxTimer: 8
-  _shotSpeed: 50
+  _shotSpeed: 85
   HP: 200
   EnemyScoreValue: 60
   HitParticle: {fileID: 1672073997217582953, guid: cb2cde70e9e1ec04bb6d018ea7c27c48,

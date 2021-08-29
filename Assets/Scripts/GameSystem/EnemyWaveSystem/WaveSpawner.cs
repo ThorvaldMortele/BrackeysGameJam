@@ -164,7 +164,7 @@ namespace GameSystem.EnemyWaveSystem
             if(activated)
             {
                 _waveCompletedText.SetActive(true);
-                _waitTimeText.text = "Next wave in " + /*waveCountDown +*/ " 5 seconds"; //WaveCountDown doesn't have the right value here, 
+                _waitTimeText.text = "Next wave incoming !"; //WaveCountDown doesn't have the right value here, 
             }
             else
             {
