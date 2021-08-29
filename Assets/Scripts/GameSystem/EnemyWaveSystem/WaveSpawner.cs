@@ -43,6 +43,8 @@ namespace GameSystem.EnemyWaveSystem
 
         private SpawnState _state = SpawnState.Counting; //Default state set to "Counting"
 
+        private PauseMenu _gameUI;
+
         private void Start()
         {
             if (_spawnPoints.Length == 0) //Check to see if there are spawnpoints in the array
@@ -94,8 +96,10 @@ namespace GameSystem.EnemyWaveSystem
             if (_index + 1 > waves.Length - 1)
             {
                 _index = 0;
-                Debug.Log("All waves comlpete");
-                //will spawn the first wave again
+
+                _gameUI.WonGame(); //Get the Win Screen 
+
+                Debug.Log("All waves comlpete"); //will spawn the first wave again
             }
             else
             {
@@ -149,13 +153,15 @@ namespace GameSystem.EnemyWaveSystem
             if(activated)
             {
                 _waveCompletedText.SetActive(true);
-                _waitTimeText.text = "Next wave in " + waveCountDown + " seconds";
+                _waitTimeText.text = "Next wave in " + /*waveCountDown +*/ " 5 seconds"; //WaveCountDown doesn't have the right value here, 
             }
             else
             {
                 _waveCompletedText.SetActive(false);
             }
         }
+
+
 
         #endregion
     }

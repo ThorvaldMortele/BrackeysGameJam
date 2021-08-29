@@ -8,12 +8,11 @@ public class PauseMenu : MonoBehaviour
     [SerializeField]
     private GameObject _pauseMenuUI;
 
-    private Scene _mainMenu;
+    [SerializeField]
+    private GameObject _gameOverUI;
 
-    private void Start()
-    {
-        _mainMenu = SceneManager.GetSceneByBuildIndex(0);
-    }
+    [SerializeField]
+    private GameObject _gameWonUI;
 
     void Update()
     {
@@ -38,7 +37,7 @@ public class PauseMenu : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
 
-        Debug.Log("Resume Game");
+        //Debug.Log("Resume Game");
     }
 
     private void PauseGame()
@@ -49,16 +48,33 @@ public class PauseMenu : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.None;
 
-        Debug.Log("Pause Game");
+        //Debug.Log("Pause Game");
     }
 
     public void LoadMenu() //Go to the menu
     {
         Time.timeScale = 1f;
-        //SceneManager.LoadScene(_mainMenu.name);
         SceneManager.LoadScene("StartMenuScene");
 
-        Debug.Log("Load Menu");
+        //Debug.Log("Load Menu");
+    }
+
+    public void WonGame() //Called when the player won the game
+    {
+        _gameWonUI.SetActive(true);
+        Time.timeScale = 0f;
+        gameIsPaused = true;
+
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    private void LostGame() //Called when the player lost the game
+    {
+        _gameOverUI.SetActive(true);
+        Time.timeScale = 0f;
+        gameIsPaused = true;
+
+        Cursor.lockState = CursorLockMode.None;
     }
 
     private void ExitGame() //Close the application
