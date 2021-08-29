@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.0804497, g: 0.099847555, b: 0.3012471, a: 1}
+  m_IndirectSpecularColor: {r: 0.08040224, g: 0.09979327, b: 0.3011908, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10461,7 +10461,11 @@ MonoBehaviour:
     count: 8
     rate: 3
   - name: Wave 5 - Boss Fight
-    enemy: {fileID: 8849162427182200181, guid: 69ba4cc8074c4934a98553652a0606c1, type: 3}
+    enemy: {fileID: 6361257456621625395, guid: a1d27275e5a16fe45a188e5cd2c0e69a, type: 3}
+    count: 10
+    rate: 5
+  - name: Wave 6 - Boss Fight
+    enemy: {fileID: 6066253074699545243, guid: d43ec021ec1793d4d98686a16ede69d7, type: 3}
     count: 10
     rate: 5
   _spawnPoints:
