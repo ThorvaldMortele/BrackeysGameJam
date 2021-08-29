@@ -116,9 +116,15 @@ namespace ShootSystem
                 GameObject go = hit.transform.gameObject;
                 if (go != null && go.tag == "Enemy")
                 {
-                    go.GetComponent<EnemyBase>().TakeDamage(LaserDamage, hit.point, LaserPushStrength);
-                    
-                    Debug.Log("Enemy");
+                    if (go.TryGetComponent(out EnemyBase enemyB))
+                    {
+                        enemyB.TakeDamage(LaserDamage, hit.point, LaserPushStrength);
+                    }
+                    else if (go.TryGetComponent(out EnemyFlyer enemyF))
+                    {
+                        enemyF.TakeDamage(LaserDamage, hit.point, LaserPushStrength);
+                    }
+
                 }
             }
         }

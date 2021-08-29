@@ -8,7 +8,7 @@ namespace MoveSystem
     {
         private float _time;
         private Rigidbody _rigidBody;
-        private GameObject _player;
+        public GameObject Player;
         public bool Flying;
 
         [Header("Walking Parameters: ")]
@@ -29,7 +29,7 @@ namespace MoveSystem
         {
             _rigidBody = GetComponent<Rigidbody>();
 
-            _player = FindObjectOfType<PlayerMovement>().gameObject;
+            Player = FindObjectOfType<PlayerMovement>().gameObject;
         }
 
         private void Update()
@@ -54,7 +54,7 @@ namespace MoveSystem
 
         private void LookAtPlayer()
         {
-            var playerTransform = _player.transform;
+            var playerTransform = Player.transform;
             transform.LookAt(playerTransform);
         }
 
@@ -62,7 +62,7 @@ namespace MoveSystem
         {
             //https://youtu.be/VAiMUZHtZyI
 
-            var playerLocation = _player.transform.position; //Get enemy location
+            var playerLocation = Player.transform.position; //Get enemy location
             var enemyLocation = transform.position; //Get player location
 
             enemyLocation.y = groundOffset;
@@ -110,7 +110,7 @@ namespace MoveSystem
         }
         private void MovementZ()
         {
-            var playerLocation = _player.transform.position; //Get enemy location
+            var playerLocation = Player.transform.position; //Get enemy location
             var enemyLocation = transform.position; //Get player location
 
             var distance = (playerLocation - enemyLocation).magnitude; //Get the distance between both

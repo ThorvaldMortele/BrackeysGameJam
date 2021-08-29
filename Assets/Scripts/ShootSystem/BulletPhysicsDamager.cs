@@ -30,6 +30,14 @@ namespace ShootSystem
 
                 this.gameObject.SetActive(false);
             }
+            else if (collision.gameObject.TryGetComponent(out EnemyFlyer enemyFlyer))
+            {
+                enemyFlyer.TakeDamage(_damage, collision.GetContact(0), collision.relativeVelocity.normalized, _pushStrength);
+
+                _hitSounds.InstantiateSound(this.transform.position);
+
+                this.gameObject.SetActive(false);
+            }
         }
     }
 }
