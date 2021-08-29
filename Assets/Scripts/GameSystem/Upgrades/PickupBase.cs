@@ -10,6 +10,8 @@ namespace GameSystem.Upgrades
         public ArmShoot ArmShoot;
         public float Duration = 3f;
 
+        public PickupSound PickupSoundScript;
+
         public void DeactivateShooting()
         {
             ArmShoot.IsRampage = false;

@@ -20,6 +20,8 @@ namespace GameSystem.Upgrades
         public LayerMask PickupSpawnCheck;
         private Vector3 _offset = new Vector3(0, 2, 0);
 
+
+
         private void Update()
         {
             _timer += Time.deltaTime;
