@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6661360274044921181}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: BulletSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 8849162426492207191}
   - component: {fileID: 8849162426492207184}
   - component: {fileID: 8849162426492207185}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 7620949035159268038}
   - component: {fileID: 960992572464622250}
   - component: {fileID: -1033389437664070065}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: EnemyFlyingShooter
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -208,6 +208,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8e493bbeeb812343bbe3458466539be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _bulletSpawn: {fileID: 6661360274044921181}
+  _bullet: {fileID: 8811802849578960247, guid: a3af8cee2b1979141a7bb3f8a4161c06, type: 3}
+  _minTimer: 4
+  _maxTimer: 8
+  _shotSpeed: 50
   HP: 100
   EnemyScoreValue: 30
   HitParticle: {fileID: 1672073997217582953, guid: cb2cde70e9e1ec04bb6d018ea7c27c48,
@@ -215,11 +220,6 @@ MonoBehaviour:
   DeathParticle: {fileID: 4051075545302277075, guid: 07114060ce67a8d4b96489e8eec8212d,
     type: 3}
   CanGetShoved: 0
-  _bulletSpawn: {fileID: 6661360274044921181}
-  _bullet: {fileID: 8811802849578960247, guid: a3af8cee2b1979141a7bb3f8a4161c06, type: 3}
-  _minTimer: 4
-  _maxTimer: 8
-  _shotSpeed: 50
 --- !u!1 &8849162427247786191
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,7 +231,7 @@ GameObject:
   - component: {fileID: 8849162427247786190}
   - component: {fileID: 8849162427247786187}
   - component: {fileID: 8849162427247786184}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
