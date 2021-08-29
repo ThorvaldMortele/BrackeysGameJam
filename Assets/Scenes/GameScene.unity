@@ -10446,7 +10446,7 @@ MonoBehaviour:
   waves:
   - name: Wave 1
     enemy: {fileID: 8849162427182200181, guid: 69ba4cc8074c4934a98553652a0606c1, type: 3}
-    count: 3
+    count: 2
     rate: 1
   - name: Wave 2
     enemy: {fileID: 7987161401708421167, guid: b161a7b8511910a46b80af095d362a7c, type: 3}
@@ -10454,15 +10454,15 @@ MonoBehaviour:
     rate: 1
   - name: Wave 3
     enemy: {fileID: 8849162427182200181, guid: 69ba4cc8074c4934a98553652a0606c1, type: 3}
-    count: 5
+    count: 6
     rate: 1
   - name: Wave 4
     enemy: {fileID: 7987161401708421167, guid: b161a7b8511910a46b80af095d362a7c, type: 3}
-    count: 6
+    count: 8
     rate: 3
   - name: Wave 5 - Boss Fight
     enemy: {fileID: 8849162427182200181, guid: 69ba4cc8074c4934a98553652a0606c1, type: 3}
-    count: 7
+    count: 10
     rate: 5
   _spawnPoints:
   - {fileID: 6030580602171316871}
@@ -11915,7 +11915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65588aff059513a45933257811419166, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 20
+  Health: 251
   HealthBar: {fileID: 176075781}
   IsAlive: 1
   _mainCam: {fileID: 0}
