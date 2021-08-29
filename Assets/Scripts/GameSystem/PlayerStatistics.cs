@@ -15,9 +15,20 @@ namespace GameSystem
 
         private PlayerSounds _playerSounds;
 
+        [SerializeField]
+        private Camera _mainCam;
+
+        [SerializeField]
+        private GameObject _deathCameraPivot;
+
+        [SerializeField]
+        private GameObject _gameOverUI;
+
 
         private void Start()
         {
+            IsAlive = true;
+
             HealthBar.GetComponent<HealthBar>().SetMaxHealth(251);
 
             _playerSounds = GetComponent<PlayerSounds>();
@@ -25,38 +36,38 @@ namespace GameSystem
 
         public void GetDamaged(int damage)
         {
-            Health -= damage;
 
-            HealthBar.GetComponent<HealthBar>().SetHealth(Health);
 
-            if (Health > 0)
+            if (IsAlive)
             {
-                _playerSounds.PlaySoundEffect(0);
+                Health -= damage;
+
+                HealthBar.GetComponent<HealthBar>().SetHealth(Health);
+                if (Health > 0)
+                {
+                    _playerSounds.PlaySoundEffect(0);
+                }
+                else if (Health <= 0)
+                {
+                    StartCoroutine(PlayerDies());
+                }
             }
-            else if (Health <= 0)
-            {
-                StartCoroutine(PlayerDies());
-            }
+
         }
 
         private IEnumerator PlayerDies()
         {
             _playerSounds.PlaySoundEffect(1);
 
-            //_deathCamera.SetActive(true);
-            //_deathCamera.AddComponent<AudioListener>();
-            //_deathCamera.transform.SetParent(null);
-            //_mainCam.gameObject.SetActive(false);
-
-
-            //Freeze time
-            //activate the game over UI
+            _deathCameraPivot.gameObject.SetActive(true);
+            _mainCam.gameObject.SetActive(false);
 
             IsAlive = false;
 
             yield return new WaitForSeconds(5f);
 
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);  // is currently reloading the same scene
+            //activate the game over UI
+            _gameOverUI.SetActive(true);
 
         }
     }

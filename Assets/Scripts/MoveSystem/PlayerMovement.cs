@@ -33,11 +33,13 @@ namespace MoveSystem
         private bool _canLand;
 
         private PlayerSounds _playerSounds;
+        private PlayerStatistics _playerStats;
 
 
         private void Start()
         {
             _playerSounds = GetComponent<PlayerSounds>();
+            _playerStats = GetComponent<PlayerStatistics>();
         }
 
 
@@ -62,8 +64,19 @@ namespace MoveSystem
             }
 
 
-            float x = Input.GetAxis("Horizontal");
-            float z = Input.GetAxis("Vertical");
+            float x;
+            float z;
+            if (_playerStats.IsAlive)
+            {
+                x = Input.GetAxis("Horizontal");
+                z = Input.GetAxis("Vertical");
+            }
+            else
+            {
+                x = 0;
+                z = 0;
+            }
+
 
             if (x != 0 || z != 0) // if movement input exists...
             {
@@ -84,16 +97,20 @@ namespace MoveSystem
 
             Vector3 move = transform.right * x + transform.forward * z;
 
-            Controller.Move(move * Speed * Time.deltaTime);
-
-            if (Input.GetButtonDown("Jump") && _isGrounded)
+            if (_playerStats.IsAlive)
             {
-                _velocity.y = Mathf.Sqrt(JumpHeight * -2f * Gravity);
+                Controller.Move(move * Speed * Time.deltaTime);
 
-                StartCoroutine(SetCanLandBool());
-                _playerSounds.PlaySoundEffect(2);
-                // play jump start sound effect
+                if (Input.GetButtonDown("Jump") && _isGrounded)
+                {
+                    _velocity.y = Mathf.Sqrt(JumpHeight * -2f * Gravity);
+
+                    StartCoroutine(SetCanLandBool());
+                    _playerSounds.PlaySoundEffect(2);
+                    // play jump start sound effect
+                }
             }
+
 
             _velocity.y += Gravity * Time.deltaTime;
 

@@ -2220,6 +2220,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2179163132413645318, guid: 0133970736176014d9091997a0c25796,
+        type: 3}
+      propertyPath: HealthBar
+      value: 
+      objectReference: {fileID: 176075781}
+    - target: {fileID: 2179163132413645318, guid: 0133970736176014d9091997a0c25796,
+        type: 3}
+      propertyPath: Health
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2179163132413645318, guid: 0133970736176014d9091997a0c25796,
+        type: 3}
+      propertyPath: _gameOverUI
+      value: 
+      objectReference: {fileID: 2703659}
     - target: {fileID: 2355030634888309863, guid: 0133970736176014d9091997a0c25796,
         type: 3}
       propertyPath: m_ClearFlags
@@ -11885,9 +11900,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65588aff059513a45933257811419166, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 251
+  Health: 20
   HealthBar: {fileID: 176075781}
   IsAlive: 1
+  _mainCam: {fileID: 0}
+  _deathCameraPivot: {fileID: 0}
+  _gameOverUI: {fileID: 0}
 --- !u!1 &1671181140
 GameObject:
   m_ObjectHideFlags: 0
