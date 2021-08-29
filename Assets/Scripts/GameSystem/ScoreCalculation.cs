@@ -5,9 +5,9 @@ using UnityEngine;
 public class ScoreCalculation : MonoBehaviour
 {
     public int Score;
-    private int ComboScore;
+    public int ComboScore;
 
-    private bool ComboActive;
+    public bool ComboActive;
 
     private int ComboMultiplyer;
     private int ComboKillCount;
