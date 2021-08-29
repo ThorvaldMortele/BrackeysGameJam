@@ -13,14 +13,13 @@ namespace ShootSystem
 
         public string PLAYER_SHOOT = "Take_Shoot";
 
-        public int LaserDamage = 8;
+        public int LaserDamage = 12;
         public int LaserPushStrength = 100;
-        public int LaserLength = 40;
+        public int LaserLength = 60;
 
         public float Range = 100f;
         public float FireRate = 10f;
         public float BulletSpeed = 100f;
-        //private float _spreadAngle = 3f;
         public float NextTimeToFire;
 
         public Camera FpsCam;
@@ -49,8 +48,13 @@ namespace ShootSystem
 
                 ChangeAnimationState(PLAYER_SHOOT);
             }
-        }
 
+            if (!IsLaser && LaserLine.GetPosition(1) != Vector3.zero)
+            {
+                LaserLine.SetPosition(0, Vector3.zero);
+                LaserLine.SetPosition(1, Vector3.zero);
+            }
+        }
 
         public IEnumerator RemoveBullet(GameObject bullet)
         {
@@ -124,7 +128,6 @@ namespace ShootSystem
                     {
                         enemyF.TakeDamage(LaserDamage, hit.point, LaserPushStrength);
                     }
-
                 }
             }
         }
