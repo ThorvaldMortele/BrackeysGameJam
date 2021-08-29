@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1672073997217582952}
   - component: {fileID: 1672073997217582953}
   - component: {fileID: 1672073997217582958}
+  - component: {fileID: 2661965690997009459}
   m_Layer: 0
   m_Name: ParticleSystemBloodCollection1
   m_TagString: Untagged
@@ -4755,6 +4756,19 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &2661965690997009459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672073997217582959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbcf6c00c51c15a46848437c5334d0bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lifeTime: 1
 --- !u!1 &1672073997572108365
 GameObject:
   m_ObjectHideFlags: 0

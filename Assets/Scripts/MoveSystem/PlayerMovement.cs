@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using GameSystem;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -31,6 +32,15 @@ namespace MoveSystem
         private bool _isGrounded;
         private bool _canLand;
 
+        private PlayerSounds _playerSounds;
+
+
+        private void Start()
+        {
+            _playerSounds = GetComponent<PlayerSounds>();
+        }
+
+
         // Update is called once per frame
         void Update()
         {
@@ -41,6 +51,17 @@ namespace MoveSystem
                 _velocity.y = -2f;
             }
 
+            if (_isGrounded)
+            {
+                if (_canLand == true)
+                {
+                    // play sound effect landing
+                    _playerSounds.PlaySoundEffect(3);
+                    _canLand = false;
+                }
+            }
+
+
             float x = Input.GetAxis("Horizontal");
             float z = Input.GetAxis("Vertical");
 
@@ -49,11 +70,6 @@ namespace MoveSystem
                 if (_isGrounded)
                 {
                     ChangeAnimationState(PLAYER_RUN);
-                    if (_canLand == true)
-                    {
-                        // play sound effect landing
-                        _canLand = false;
-                    }
                 }
                 else
                 {
@@ -75,6 +91,7 @@ namespace MoveSystem
                 _velocity.y = Mathf.Sqrt(JumpHeight * -2f * Gravity);
 
                 _canLand = true;
+                _playerSounds.PlaySoundEffect(2);
                 // play jump start sound effect
             }
 

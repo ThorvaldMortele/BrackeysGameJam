@@ -4843,6 +4843,7 @@ MonoBehaviour:
   IsRampage: 0
   IsLaser: 0
   LaserLine: {fileID: 0}
+  _playerSounds: {fileID: 0}
 --- !u!23 &798560327
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9895,7 +9896,7 @@ MonoBehaviour:
   - {fileID: 6030580602171316870}
   - {fileID: 6030580602171316869}
   - {fileID: 6030580602171316868}
-  timeBetweenWaves: 5
+  timeBetweenWaves: 2
   waveCountDown: 0
 --- !u!114 &1466645602
 MonoBehaviour:
@@ -10782,6 +10783,7 @@ MonoBehaviour:
   IsRampage: 0
   IsLaser: 0
   LaserLine: {fileID: 0}
+  _playerSounds: {fileID: 0}
 --- !u!1001 &1629505873
 PrefabInstance:
   m_ObjectHideFlags: 0

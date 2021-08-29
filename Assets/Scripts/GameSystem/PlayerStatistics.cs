@@ -31,7 +31,7 @@ namespace GameSystem
 
             if (Health > 0)
             {
-                _playerSounds.PlaySoundEffect(1);
+                _playerSounds.PlaySoundEffect(0);
             }
             else if (Health <= 0)
             {
@@ -41,7 +41,7 @@ namespace GameSystem
 
         private IEnumerator PlayerDies()
         {
-            _playerSounds.PlaySoundEffect(2);
+            _playerSounds.PlaySoundEffect(1);
 
             //_deathCamera.SetActive(true);
             //_deathCamera.AddComponent<AudioListener>();

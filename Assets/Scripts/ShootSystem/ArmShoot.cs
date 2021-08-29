@@ -2,6 +2,7 @@
 using GameSystem.Enemies;
 using System.Collections;
 using System.Collections.Generic;
+using GameSystem;
 
 namespace ShootSystem
 {
@@ -31,6 +32,9 @@ namespace ShootSystem
 
         public LineRenderer LaserLine;
 
+        [SerializeField]
+        private PlayerSounds _playerSounds;
+
         private void Update()
         {
             if (Input.GetButton("Fire1") && Time.time >= NextTimeToFire)
@@ -40,6 +44,8 @@ namespace ShootSystem
                 if (IsTriple) ShootTriple();
                 else if (IsLaser) ShootLaser();
                 else ShootRegular();
+
+                _playerSounds.PlaySoundEffect(4);
 
                 ChangeAnimationState(PLAYER_SHOOT);
             }
