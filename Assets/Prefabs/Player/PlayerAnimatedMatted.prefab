@@ -629,12 +629,12 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 4
-  m_Radius: 0.5
+  m_Radius: 0.77
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: -0.33}
 --- !u!114 &2355030636422579567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -788,6 +788,7 @@ MonoBehaviour:
   IsAlive: 0
   _mainCam: {fileID: 2355030634888309863}
   _deathCameraPivot: {fileID: 7109952398702426716}
+  _gameOverUI: {fileID: 0}
 --- !u!1 &2355030636667144016
 GameObject:
   m_ObjectHideFlags: 0
