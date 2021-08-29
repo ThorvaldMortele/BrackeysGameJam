@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.08046258, g: 0.099853046, b: 0.30124947, a: 1}
+  m_IndirectSpecularColor: {r: 0.100764096, g: 0.12514442, b: 0.317819, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2230,7 +2230,7 @@ PrefabInstance:
     - target: {fileID: 2179163132413645318, guid: 0133970736176014d9091997a0c25796,
         type: 3}
       propertyPath: Health
-      value: 151
+      value: 251
       objectReference: {fileID: 0}
     - target: {fileID: 2179163132413645318, guid: 0133970736176014d9091997a0c25796,
         type: 3}
@@ -11901,30 +11901,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1661380015}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1663262731 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2355030636422579570, guid: 0133970736176014d9091997a0c25796,
-    type: 3}
-  m_PrefabInstance: {fileID: 306229121}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1663262732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1663262731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65588aff059513a45933257811419166, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Health: 251
-  HealthBar: {fileID: 176075781}
-  IsAlive: 1
-  _mainCam: {fileID: 0}
-  _deathCameraPivot: {fileID: 0}
-  _gameOverUI: {fileID: 0}
 --- !u!1 &1671181140
 GameObject:
   m_ObjectHideFlags: 0
