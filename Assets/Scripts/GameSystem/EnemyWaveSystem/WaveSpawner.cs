@@ -48,10 +48,10 @@ namespace GameSystem.EnemyWaveSystem
 
         private void Start()
         {
-            if (_spawnPoints.Length == 0) //Check to see if there are spawnpoints in the array
-            {
-                Debug.LogError("No spawn points referenced");
-            }
+            //if (_spawnPoints.Length == 0) //Check to see if there are spawnpoints in the array
+            //{
+            //    Debug.LogError("No spawn points referenced");
+            //}
 
             _waveCompletedText.SetActive(false);
 
@@ -100,8 +100,6 @@ namespace GameSystem.EnemyWaveSystem
 
         private void BeginNewWave()
         {
-            Debug.Log(_index);
-
             ShowWaveCompletedText(true);
 
             _state = SpawnState.Counting;
@@ -138,7 +136,6 @@ namespace GameSystem.EnemyWaveSystem
         {
             ShowWaveCompletedText(false);
 
-            Debug.Log("Spawning wave: " + wave.name);
             _state = SpawnState.Spawning;
             
             for(int i = 0; i < wave.count; i++)
@@ -156,7 +153,6 @@ namespace GameSystem.EnemyWaveSystem
         private void SpawnEnemy(Transform enemy)
         {
             //Spawn enemy
-            Debug.Log("Spawning Enemy: " + enemy.name);
             
             Transform spawnpoint = _spawnPoints[Random.Range(0, _spawnPoints.Length)];
             Instantiate(enemy, spawnpoint.position, spawnpoint.rotation);    

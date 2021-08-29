@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2384606747399433188}
   - component: {fileID: 71317094021817755}
   - component: {fileID: 8436641758128875289}
+  - component: {fileID: 2713203236812528431}
   m_Layer: 10
   m_Name: Pickup_GunLaser
   m_TagString: Untagged
@@ -112,3 +113,18 @@ MonoBehaviour:
     m_Bits: 256
   ArmShoot: {fileID: 0}
   Duration: 3
+  PickupSoundScript: {fileID: 2713203236812528431}
+--- !u!114 &2713203236812528431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929213538213863164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a0730397dd9f544a982343de3dbe892, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _soundEffects:
+  - {fileID: 8300000, guid: 06f47670b16e5bc4c88a132542d80230, type: 3}
