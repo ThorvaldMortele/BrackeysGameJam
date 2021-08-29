@@ -52,7 +52,7 @@ public class ScoreCalculation : MonoBehaviour
             ComboActive = false;
             _timer = 0;
 
-            Debug.Log("combo ended, current total score is " + Score);
+            //Debug.Log("combo ended, current total score is " + Score);
         }
     }
     private void MultiplyerChanges()   // ComboMultiplyer changes according to amount of pickups in 1 combo
@@ -87,7 +87,7 @@ public class ScoreCalculation : MonoBehaviour
         _timer = 0;    // timer reset
         ComboKillCount += 1;
 
-        Debug.Log("this kill rewards you with " + scoreValue + "normal points and " + ComboScore + "combo points");
+        //Debug.Log("this kill rewards you with " + scoreValue + "normal points and " + ComboScore + "combo points");
     }
 
 }
