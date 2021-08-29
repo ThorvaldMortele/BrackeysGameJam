@@ -156,6 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 267758a7a265c3a488acdbdfaae4fdd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   _contactDamage: 20
 --- !u!114 &3136408548846444571
 MonoBehaviour:
@@ -170,3 +171,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lifeTime: 7
+=======
+  _contactDamage: 15
+>>>>>>> Stashed changes

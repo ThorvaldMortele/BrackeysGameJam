@@ -10461,9 +10461,14 @@ MonoBehaviour:
     count: 8
     rate: 3
   - name: Wave 5 - Boss Fight
-    enemy: {fileID: 8849162427182200181, guid: 69ba4cc8074c4934a98553652a0606c1, type: 3}
+    enemy: {fileID: 2304574569966737422, guid: 25e83d53d6a8cb5499b824e6d945985b, type: 3}
     count: 10
     rate: 5
+  - name: Wave 6 - Boss Fight
+    enemy: {fileID: 1841809594747898519, guid: 82d51516666a58e48b203ca0be9a7438, type: 3}
+    count: 10
+    rate: 5
+  _multipleEnemyTypes: 0
   _spawnPoints:
   - {fileID: 6030580602171316871}
   - {fileID: 6030580602171316870}

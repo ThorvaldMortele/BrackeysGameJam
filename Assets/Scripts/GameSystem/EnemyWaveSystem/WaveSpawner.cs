@@ -32,7 +32,10 @@ namespace GameSystem.EnemyWaveSystem
 
         public Wave[] waves;
         private int _index = 0; //Index of the wave
-               
+
+        [SerializeField]
+        private bool _multipleEnemyTypes = false;
+
         [SerializeField]
         private Transform[] _spawnPoints;
 
@@ -172,5 +175,18 @@ namespace GameSystem.EnemyWaveSystem
             }
         }
         #endregion
+
+        private void MultipleEnemyTypes()
+        {
+            if(_multipleEnemyTypes)
+            {
+                //get the amount of each
+                //
+            }
+            else
+            {
+                //
+            }
+        }
     }
 }
