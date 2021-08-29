@@ -43,7 +43,8 @@ namespace GameSystem.EnemyWaveSystem
 
         private SpawnState _state = SpawnState.Counting; //Default state set to "Counting"
 
-        private PauseMenu _gameUI;
+        [SerializeField]
+        private PauseMenu _gameUI = new PauseMenu();
 
         private void Start()
         {
@@ -63,6 +64,7 @@ namespace GameSystem.EnemyWaveSystem
             {                
                 if(!EnemyIsAlive()) //Check if player killed all enemies
                 {
+                    WinGame();
                     BeginNewWave();
                 }
                 else
@@ -84,30 +86,43 @@ namespace GameSystem.EnemyWaveSystem
             {
                 waveCountDown -= Time.deltaTime;
             }
+
+            
         }
 
-        void BeginNewWave()
+        private void WinGame()
         {
+            if (_index >= waves.Length + 1) //to make sure the last wave is still played
+            {
+                _gameUI.WonGame();
+            }
+        }
+
+        private void BeginNewWave()
+        {
+            Debug.Log(_index);
+
             ShowWaveCompletedText(true);
 
             _state = SpawnState.Counting;
             waveCountDown = timeBetweenWaves;
 
-            if (_index + 1 > waves.Length - 1)
+            RestartIndex();
+        }
+
+        private void RestartIndex()
+        {
+            if (_index + 1 > waves.Length - 1) //automatically resets
             {
                 _index = 0;
-
-                _gameUI.WonGame(); //Get the Win Screen 
-
-                Debug.Log("All waves comlpete"); //will spawn the first wave again
             }
             else
             {
                 _index++;
-            }            
+            }
         }
 
-        bool EnemyIsAlive()
+        private bool EnemyIsAlive()
         {
             searchCountdown -= Time.deltaTime;
             if(searchCountdown <=0f)
@@ -119,7 +134,7 @@ namespace GameSystem.EnemyWaveSystem
             return true;
         }
 
-        IEnumerator SpawnWave(Wave wave)
+        private IEnumerator SpawnWave(Wave wave)
         {
             ShowWaveCompletedText(false);
 
@@ -138,7 +153,7 @@ namespace GameSystem.EnemyWaveSystem
             yield break;
         }
 
-        void SpawnEnemy(Transform enemy)
+        private void SpawnEnemy(Transform enemy)
         {
             //Spawn enemy
             Debug.Log("Spawning Enemy: " + enemy.name);
@@ -160,9 +175,6 @@ namespace GameSystem.EnemyWaveSystem
                 _waveCompletedText.SetActive(false);
             }
         }
-
-
-
         #endregion
     }
 }

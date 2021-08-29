@@ -4,7 +4,10 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public static bool gameIsPaused = false;
-    
+
+    [SerializeField]
+    private GameObject _gameMenuUI;
+
     [SerializeField]
     private GameObject _pauseMenuUI;
 
@@ -36,8 +39,6 @@ public class PauseMenu : MonoBehaviour
         gameIsPaused = false;
 
         Cursor.lockState = CursorLockMode.Locked;
-
-        //Debug.Log("Resume Game");
     }
 
     private void PauseGame()
@@ -47,20 +48,18 @@ public class PauseMenu : MonoBehaviour
         gameIsPaused = true;
 
         Cursor.lockState = CursorLockMode.None;
-
-        //Debug.Log("Pause Game");
     }
 
     public void LoadMenu() //Go to the menu
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("StartMenuScene");
-
-        //Debug.Log("Load Menu");
     }
 
     public void WonGame() //Called when the player won the game
     {
+        Debug.Log("You won");
+        _gameMenuUI.SetActive(false);
         _gameWonUI.SetActive(true);
         Time.timeScale = 0f;
         gameIsPaused = true;

@@ -2147,6 +2147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ec78cc0335267d47aac7847c5c3bf67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameMenuUI: {fileID: 134109172}
   _pauseMenuUI: {fileID: 1784146188}
   _gameOverUI: {fileID: 2703659}
   _gameWonUI: {fileID: 237649186}
@@ -10457,6 +10458,7 @@ MonoBehaviour:
   - {fileID: 6030580602171316868}
   timeBetweenWaves: 2
   waveCountDown: 0
+  _gameUI: {fileID: 288176919}
 --- !u!114 &1466645602
 MonoBehaviour:
   m_ObjectHideFlags: 0

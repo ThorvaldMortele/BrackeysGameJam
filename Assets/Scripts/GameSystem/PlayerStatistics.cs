@@ -68,7 +68,7 @@ namespace GameSystem
 
             //activate the game over UI
             _gameOverUI.SetActive(true);
-
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }
