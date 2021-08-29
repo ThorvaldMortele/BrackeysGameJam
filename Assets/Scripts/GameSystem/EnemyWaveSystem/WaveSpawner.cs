@@ -86,13 +86,11 @@ namespace GameSystem.EnemyWaveSystem
             {
                 waveCountDown -= Time.deltaTime;
             }
-
-            
         }
 
         private void WinGame()
         {
-            if (_index >= waves.Length + 1) //to make sure the last wave is still played
+            if (_index >= 5) //to make sure the last wave is still played
             {
                 _gameUI.WonGame();
             }

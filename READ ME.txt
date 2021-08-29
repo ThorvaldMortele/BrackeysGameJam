@@ -26,48 +26,31 @@ Game
 - Audio (music, sfx)
 - particle effects
 
-
-
-
-
-
---------------------
-Reference (similar games):
--
--
--
---------------------
-Team Roles:
-
-Koen; character creation + animation
-Thorvald; shooting behaviour
-Vincent; enemies (fly, spawn, pathfinding?)
 --------------------
 Art style:
 Low Poly
 --------------------
-Deadlines:
-25/8
-Koen; Character creation
-Thorvald; shooting behaviour
-Vincent; enemy spawn
+Who did what;
 
-26/8
-Koen; Character animation
-Thorvald; shooting behaviour
-Vincent; wave implementation
+Koenfu Panda
+- Character design
+- Character creation
+- Character animation
+- Implementing sfx
+- Score system
+- Score ui
 
-27/8
-Koen;
-Thorvald; pick ups
-Vincent; enemy pathfinding
+Dizz
+- Shooting system
+- Pick ups system
+- Camera control
 
-28/8
-Koen; game end limit (copied from other project) + damage
-Thorvald; Audio
-Vincent; UI + Arena textures + wave set up (fill in variables)
-
-+ Ads
-
-29/8
-Gamejam Deadline
+Vincent Sharks
+- Arena model
+- Enemy behaviour
+- Enemy wave spawn system
+- Searching/creating sfx
+- Voice lines
+- Main menu ui
+- Main menu art
+- Game ui
