@@ -8,7 +8,7 @@ public class SpawnCollider : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            Physics.IgnoreCollision(collision.collider, this.gameObject.GetComponent<BoxCollider>());
+            Physics.IgnoreCollision(collision.gameObject.GetComponent<BoxCollider>(), this.gameObject.GetComponent<BoxCollider>(), true);
         }
     }
 }

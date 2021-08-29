@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7987161401708421169}
   - component: {fileID: 1069914707238033643}
   - component: {fileID: 4457560451723235407}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: EnemyGround
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -101,8 +101,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 2, z: 1.26}
+  m_Center: {x: 0, y: 0, z: 0.12}
 --- !u!1 &7987161402200564964
 GameObject:
   m_ObjectHideFlags: 0
@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 7987161402200564965}
   - component: {fileID: 7987161402200564960}
   - component: {fileID: 7987161402200564963}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,6 +193,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GroundedCreature
+      objectReference: {fileID: 0}
+    - target: {fileID: 2780591180365396613, guid: 73e1c0a61ddc55644acff6384e5aadde,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3304925652292149311, guid: 73e1c0a61ddc55644acff6384e5aadde,
         type: 3}

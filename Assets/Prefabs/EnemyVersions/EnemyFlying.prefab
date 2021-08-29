@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8849162426492207191}
   - component: {fileID: 8849162426492207184}
   - component: {fileID: 8849162426492207185}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 8849162427182200139}
   - component: {fileID: 7620949035159268038}
   - component: {fileID: 960992572464622250}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: EnemyFlying
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.1021645, y: 1.0999999, z: 2.018185}
+  m_Size: {x: 1.98, y: 1.07, z: 2.56}
   m_Center: {x: 0.022619367, y: 0.5, z: -0.016492486}
 --- !u!1 &8849162427247786191
 GameObject:
@@ -194,7 +194,7 @@ GameObject:
   - component: {fileID: 8849162427247786190}
   - component: {fileID: 8849162427247786187}
   - component: {fileID: 8849162427247786184}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,6 +273,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FlyingCreature
+      objectReference: {fileID: 0}
+    - target: {fileID: 5132471148100004249, guid: dcd75240788d5034c966ceae08cf4d57,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5508434492479599395, guid: dcd75240788d5034c966ceae08cf4d57,
         type: 3}
