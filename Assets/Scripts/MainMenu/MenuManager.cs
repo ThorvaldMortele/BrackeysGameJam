@@ -22,15 +22,18 @@ public class MenuManager : MonoBehaviour
     #region Game Scene
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (SceneManager.GetActiveScene().name == "GameScene")
         {
-            if (gameIsPaused)
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                ResumeGame();
-            }
-            else
-            {
-                PauseGame();
+                if (gameIsPaused)
+                {
+                    ResumeGame();
+                }
+                else
+                {
+                    PauseGame();
+                }
             }
         }
     }
