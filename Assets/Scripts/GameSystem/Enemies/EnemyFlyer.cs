@@ -1,7 +1,4 @@
-﻿using GameSystem.Enemies;
-using MoveSystem;
-using System.Collections;
-using System.Collections.Generic;
+﻿using MoveSystem;
 using UnityEngine;
 
 namespace GameSystem.Enemies
@@ -14,7 +11,6 @@ namespace GameSystem.Enemies
         [SerializeField]
         private GameObject _bullet;
 
-        //private EnemyMovement _enemyMovement;
         private PlayerMovement _player;
 
         [SerializeField]
@@ -29,7 +25,6 @@ namespace GameSystem.Enemies
         private Rigidbody _rigidBody;
 
         public int HP;
-        //public int MovementSpeed;
         public int EnemyScoreValue = 30;
 
         public ParticleSystem HitParticle;
@@ -76,14 +71,14 @@ namespace GameSystem.Enemies
             bulletRb.AddForce(shootDir * _shotSpeed, ForceMode.Impulse);
         }
 
-        // for physics collisions
+        //For physics collisions
         public void TakeDamage(int amount, ContactPoint pointOfContact, Vector3 bulletDirection, int pushStrength)
         {
             HP -= amount;
 
             GetShoved(bulletDirection, pushStrength);
 
-            // show blood (or sumfin alike)
+            //Show blood (or sumfin alike)
             Instantiate(HitParticle, pointOfContact.point, Quaternion.identity);
 
             if (HP <= 0)
@@ -94,14 +89,14 @@ namespace GameSystem.Enemies
             }
         }
 
-        // for rayCast hits
+        //For rayCast hits
         public void TakeDamage(int amount, Vector3 hitPosition, int pushStrength)
         {
             HP -= amount;
 
             GetShoved(pushStrength);
 
-            // show blood (or sumfin alike)
+            //Show blood (or sumfin alike)
             Instantiate(HitParticle, hitPosition, Quaternion.identity);
 
             if (HP <= 0)
@@ -112,14 +107,14 @@ namespace GameSystem.Enemies
             }
         }
 
-
-        public void GetShoved(int pushStrength) // this one is for eventual raycast hits 
+        public void GetShoved(int pushStrength) //This one is for eventual raycast hits 
         {
             if (CanGetShoved)
             {
                 _rigidBody.AddForce(-this.transform.forward * pushStrength, ForceMode.Impulse);
             }
         }
+
         public void GetShoved(Vector3 bulletDir, int pushStrength)
         {
             if (CanGetShoved)
@@ -127,7 +122,6 @@ namespace GameSystem.Enemies
                 _rigidBody.AddForce(-bulletDir * pushStrength, ForceMode.Impulse);
             }
         }
-
 
         private void Die()
         {

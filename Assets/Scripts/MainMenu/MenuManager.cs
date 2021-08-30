@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PauseMenu : MonoBehaviour
+//Script to be called to pull up different menus/scenes
+public class MenuManager : MonoBehaviour
 {
-    //GOING TO BE REPLACED BY MenuManager
-
     public static bool gameIsPaused = false;
 
     [SerializeField]
@@ -19,9 +18,11 @@ public class PauseMenu : MonoBehaviour
     [SerializeField]
     private GameObject _gameWonUI;
 
-    void Update()
+
+    #region Game Scene
+    private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (gameIsPaused)
             {
@@ -52,7 +53,7 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
     }
 
-    public void LoadMenu() //Go to the menu
+    public void LoadMenu() //Go to the main menu
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("StartMenuScene");
@@ -77,8 +78,19 @@ public class PauseMenu : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.None;
     }
+    #endregion
 
-    private void ExitGame() //Close the application
+
+    #region Main Menu
+    public void PlayGame()
+    {
+        //var mainMenuIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene("GameScene"); //Loads the GameScene
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+    #endregion
+
+    public void QuitGame()
     {
         Application.Quit();
     }

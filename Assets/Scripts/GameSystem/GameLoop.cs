@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 namespace GameSystem
 {
+    //MenuManager + GameLoop are both working on scenes and game state
+
     public class GameLoop : MonoBehaviour
     {
         private bool gameHasEnded = false;

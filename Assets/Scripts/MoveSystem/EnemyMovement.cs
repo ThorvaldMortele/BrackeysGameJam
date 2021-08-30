@@ -1,11 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace MoveSystem
 {
     public class EnemyMovement : MonoBehaviour
     {
+        //WARNING: There are inconsistent line endings in the 'Assets/Scripts/MoveSystem/EnemyMovement.cs' script. Some are Mac OS X (UNIX) and some are Windows.
+
+
         private float _time;
         private Rigidbody _rigidBody;
         public GameObject Player;
@@ -49,9 +50,6 @@ namespace MoveSystem
             MoveTowardsPlayer();
         }
 
-
-
-
         private void LookAtPlayer()
         {
             var playerTransform = Player.transform;
@@ -85,79 +83,79 @@ namespace MoveSystem
 
 
         #region Currently not in use
-        private void Movement()
-        {            
-            LookAtPlayer();
+        //private void Movement()
+        //{            
+        //    LookAtPlayer();
 
-            if (Flying) //For flying enemies
-            {
-                //Update location; X = Left/Right, Y = Up/Down, Z = Forward/Backward
-                var x = 0;
-                var y = SmoothSineWave() + groundOffset; //Sin wave with an offset above the ground
-                var z = 0;
+        //    if (Flying) //For flying enemies
+        //    {
+        //        //Update location; X = Left/Right, Y = Up/Down, Z = Forward/Backward
+        //        var x = 0;
+        //        var y = SmoothSineWave() + groundOffset; //Sin wave with an offset above the ground
+        //        var z = 0;
 
-                transform.localPosition = new Vector3(x, y, z);
-            }
-            else //For ground enemies
-            {
-                //Update location; X = Left/Right, Y = Up/Down, Z = Forward/Backward
-                var x = 0;
-                var y = 0;
-                var z = 0;
+        //        transform.localPosition = new Vector3(x, y, z);
+        //    }
+        //    else //For ground enemies
+        //    {
+        //        //Update location; X = Left/Right, Y = Up/Down, Z = Forward/Backward
+        //        var x = 0;
+        //        var y = 0;
+        //        var z = 0;
 
-                transform.localPosition = new Vector3(x, y, z);
-            }
-        }
-        private void MovementZ()
-        {
-            var playerLocation = Player.transform.position; //Get enemy location
-            var enemyLocation = transform.position; //Get player location
+        //        transform.localPosition = new Vector3(x, y, z);
+        //    }
+        //}
+        //private void MovementZ()
+        //{
+        //    var playerLocation = Player.transform.position; //Get enemy location
+        //    var enemyLocation = transform.position; //Get player location
 
-            var distance = (playerLocation - enemyLocation).magnitude; //Get the distance between both
+        //    var distance = (playerLocation - enemyLocation).magnitude; //Get the distance between both
 
-            if (distance >= 10) //If distance is bigger than x amount
-            {
-                //Add force to the enemy to move forward
-                var newPosition = transform.forward * flyingSpeed * _time;
-                //newPosition.y = 5; //Keep it of the ground (since it's not using pure z axis yet
+        //    if (distance >= 10) //If distance is bigger than x amount
+        //    {
+        //        //Add force to the enemy to move forward
+        //        var newPosition = transform.forward * flyingSpeed * _time;
+        //        //newPosition.y = 5; //Keep it of the ground (since it's not using pure z axis yet
 
-                enemyLocation += newPosition;
-            }
-            else
-            {
-                //stop the enemy, so that it keeps a little distance from the player
+        //        enemyLocation += newPosition;
+        //    }
+        //    else
+        //    {
+        //        //stop the enemy, so that it keeps a little distance from the player
 
-                //NEED TO CHANGE: when the player goes backwards after the enemy has stopped, the enemy teleports
+        //        //NEED TO CHANGE: when the player goes backwards after the enemy has stopped, the enemy teleports
 
-                enemyLocation += Vector3.zero;
+        //        enemyLocation += Vector3.zero;
 
-                //make the attack range bigger than this tho so it can still attack
-            }
-        }
-        private float SmoothSineWave()
-        {
-            //https://answers.unity.com/questions/434717/how-to-make-a-sine-wave-with-a-transform.html
+        //        //make the attack range bigger than this tho so it can still attack
+        //    }
+        //}
+        //private float SmoothSineWave()
+        //{
+        //    //https://answers.unity.com/questions/434717/how-to-make-a-sine-wave-with-a-transform.html
 
-            // y(t) = A * sin(ωt + θ) [Basic Sine Wave Equation]
-            // [A = amplitude | ω = AngularFrequency ((2*PI)f) | f = 1/T | T = [period (s)] | θ = phase | t = elapsedTime]
-            // Public/Serialized Variables: amplitude, period, phase
+        //    // y(t) = A * sin(ωt + θ) [Basic Sine Wave Equation]
+        //    // [A = amplitude | ω = AngularFrequency ((2*PI)f) | f = 1/T | T = [period (s)] | θ = phase | t = elapsedTime]
+        //    // Public/Serialized Variables: amplitude, period, phase
 
-            // If the value of period has altered last known frequency...
-            if (1 / (period) != _frequency)
-            {
-                // Recalculate frequency & omega.
-                _frequency = 1 / (period);
-                _angularFrequency = (2 * Mathf.PI) *_frequency;
-            }
-            // Update elapsed time.
-            //_time += Time.deltaTime;
-            // Calculate new omega-time product.
-            float omegaProduct = (_angularFrequency * _time);
-            // Plug in all calculated variables into the complete Sine wave equation.
-            float y = (amplitude * Mathf.Sin(omegaProduct + phase));
+        //    // If the value of period has altered last known frequency...
+        //    if (1 / (period) != _frequency)
+        //    {
+        //        // Recalculate frequency & omega.
+        //        _frequency = 1 / (period);
+        //        _angularFrequency = (2 * Mathf.PI) *_frequency;
+        //    }
+        //    // Update elapsed time.
+        //    //_time += Time.deltaTime;
+        //    // Calculate new omega-time product.
+        //    float omegaProduct = (_angularFrequency * _time);
+        //    // Plug in all calculated variables into the complete Sine wave equation.
+        //    float y = (amplitude * Mathf.Sin(omegaProduct + phase));
 
-            return y;            
-        }
+        //    return y;            
+        //}
         #endregion
     }
 }

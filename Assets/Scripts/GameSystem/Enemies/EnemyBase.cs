@@ -1,13 +1,11 @@
-﻿using MoveSystem;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace GameSystem.Enemies
 {
     //Base class for the enemy information, to be inherited from
 
     //Can be put on prefabs and change the specific values
-
-
+    
     public class EnemyBase : MonoBehaviour
     {
         private Rigidbody _rigidBody;
@@ -66,7 +64,6 @@ namespace GameSystem.Enemies
             }               
         }
 
-
         public void GetShoved(int pushStrength) // this one is for eventual raycast hits 
         {
             if (CanGetShoved)
@@ -81,9 +78,6 @@ namespace GameSystem.Enemies
                 _rigidBody.AddForce(-bulletDir * pushStrength, ForceMode.Impulse);
             }
         }
-
-
-
 
         private void Die()
         {

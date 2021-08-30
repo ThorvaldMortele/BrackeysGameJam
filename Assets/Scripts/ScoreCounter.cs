@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 using TMPro;
 
 public class ScoreCounter : MonoBehaviour
@@ -42,7 +39,6 @@ public class ScoreCounter : MonoBehaviour
         _originalY = CompleteScoreObject.transform.position.y;
     }
 
-
     void Update()
     {
         _shaking = Mathf.Sin(Time.deltaTime * _speed) * _amount;  // adding a shake to the counter when score is gained
@@ -57,9 +53,6 @@ public class ScoreCounter : MonoBehaviour
             ScoreShown = ScoreCalculation.Score;
         }
 
-
-
-
         if (_scoreIsIncreasing)
         {
             ScoreShown++;
@@ -68,9 +61,7 @@ public class ScoreCounter : MonoBehaviour
         else
         {
             CompleteScoreObject.transform.position = new Vector3(CompleteScoreObject.transform.position.x, _originalY, CompleteScoreObject.transform.position.z);
-        }
-
-
+        }        
 
         if (ScoreCalculation.ComboActive)
         {
@@ -81,7 +72,6 @@ public class ScoreCounter : MonoBehaviour
         {
             ComboScore.SetActive(false);
         }
-
 
         ScoreText.text = ScoreShown.ToString(_format);
     }

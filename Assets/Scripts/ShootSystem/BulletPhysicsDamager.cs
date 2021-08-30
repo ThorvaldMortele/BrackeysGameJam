@@ -1,6 +1,4 @@
 ﻿using GameSystem.Enemies;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace ShootSystem
@@ -18,7 +16,6 @@ namespace ShootSystem
         {
             _hitSounds = FindObjectOfType<HitSounds>();
         }
-
 
         private void OnCollisionEnter(Collision collision)
         {

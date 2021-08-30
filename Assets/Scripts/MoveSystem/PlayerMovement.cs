@@ -1,6 +1,5 @@
 ﻿using GameSystem;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace MoveSystem
@@ -42,8 +41,6 @@ namespace MoveSystem
             _playerStats = GetComponent<PlayerStatistics>();
         }
 
-
-        // Update is called once per frame
         void Update()
         {
             _isGrounded = Physics.CheckSphere(GroundCheck.position, GroundDist, GroundMask);
@@ -57,7 +54,7 @@ namespace MoveSystem
             {
                 if (_canLand == true)
                 {
-                    // play sound effect landing
+                    //Play sound effect landing
                     _playerSounds.PlaySoundEffect(3);
                     _canLand = false;
                 }
@@ -107,7 +104,7 @@ namespace MoveSystem
 
                     StartCoroutine(SetCanLandBool());
                     _playerSounds.PlaySoundEffect(2);
-                    // play jump start sound effect
+                    //Play jump start sound effect
                 }
             }
 
@@ -124,17 +121,15 @@ namespace MoveSystem
             _canLand = true;
         }
 
-
-
         void ChangeAnimationState(string newState)
         {
-            // stop animation from interrupting itself
+            //Stop animation from interrupting itself
             if (_currentState == newState) return;
 
-            // play the animation
+            //Play the animation
             _characterAnimator.Play(newState,1);
 
-            // reassign the current state
+            //Reassign the current state
             _currentState = newState;
         }
     }

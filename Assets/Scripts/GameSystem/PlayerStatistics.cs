@@ -1,7 +1,5 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace GameSystem
 {
@@ -36,8 +34,6 @@ namespace GameSystem
 
         public void GetDamaged(int damage)
         {
-
-
             if (IsAlive)
             {
                 Health -= damage;
@@ -52,7 +48,6 @@ namespace GameSystem
                     StartCoroutine(PlayerDies());
                 }
             }
-
         }
 
         private IEnumerator PlayerDies()
@@ -66,7 +61,7 @@ namespace GameSystem
 
             yield return new WaitForSeconds(5f);
 
-            //activate the game over UI
+            //Activate the Game Over UI
             _gameOverUI.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
         }

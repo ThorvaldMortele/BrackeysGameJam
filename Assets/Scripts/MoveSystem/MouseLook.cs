@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace MoveSystem
 {
@@ -15,8 +13,7 @@ namespace MoveSystem
         {
             Cursor.lockState = CursorLockMode.Locked;
         }
-
-        // Update is called once per frame
+        
         void Update()
         {
             float mouseX = Input.GetAxis("Mouse X") * MouseSensitivity * Time.deltaTime;
@@ -29,5 +26,4 @@ namespace MoveSystem
             PlayerBody.Rotate(Vector3.up * mouseX);
         }
     }
-
 }

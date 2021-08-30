@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ScoreCalculation : MonoBehaviour
 {
@@ -26,7 +24,6 @@ public class ScoreCalculation : MonoBehaviour
         ComboTimerLimit = 6.00f;  
     }
 
-
     private void Update()
     {
         if (ComboActive == true)
@@ -38,8 +35,6 @@ public class ScoreCalculation : MonoBehaviour
 
         MultiplyerChanges();
     }
-
-
 
     private void ComboReset()  // if timer is longer than specified amount, reset the combo and its attributes, and ofcourse add the combo points to score
     {
@@ -89,5 +84,4 @@ public class ScoreCalculation : MonoBehaviour
 
         //Debug.Log("this kill rewards you with " + scoreValue + "normal points and " + ComboScore + "combo points");
     }
-
 }

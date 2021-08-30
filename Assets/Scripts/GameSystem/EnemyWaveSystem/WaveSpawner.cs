@@ -48,11 +48,6 @@ namespace GameSystem.EnemyWaveSystem
 
         private void Start()
         {
-            //if (_spawnPoints.Length == 0) //Check to see if there are spawnpoints in the array
-            //{
-            //    Debug.LogError("No spawn points referenced");
-            //}
-
             _waveCompletedText.SetActive(false);
 
             waveCountDown = timeBetweenWaves;    
@@ -90,7 +85,10 @@ namespace GameSystem.EnemyWaveSystem
 
         private void WinGame()
         {
-            if (_index >= 5) //to make sure the last wave is still played
+            //HARD CODED -> waves restart automatically else this wouldn't get called
+            //Still has to be fixed
+
+            if (_index >= 6) //To make sure the last wave is still played
             {
                 _gameUI.WonGame();
             }
