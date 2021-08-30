@@ -4,7 +4,7 @@ namespace MoveSystem
 {
     public class MouseLook : MonoBehaviour
     {
-        public float MouseSensitivity = 100;
+        public float MouseSensitivity; //100
         public Transform PlayerBody;
         private float _xRotation = 0f;
 
@@ -24,6 +24,11 @@ namespace MoveSystem
 
             transform.localRotation = Quaternion.Euler(_xRotation, 0, 0);
             PlayerBody.Rotate(Vector3.up * mouseX);
+        }
+
+        public void UpdateSensititvity(float amount)
+        {
+            MouseSensitivity = amount;
         }
     }
 }
