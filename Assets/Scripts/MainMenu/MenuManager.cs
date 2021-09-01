@@ -7,16 +7,16 @@ public class MenuManager : MonoBehaviour
     public static bool gameIsPaused = false;
 
     [SerializeField]
-    private GameObject _gameMenuUI;
+    private GameObject _gameMenuUI = null;
 
     [SerializeField]
-    private GameObject _pauseMenuUI;
+    private GameObject _pauseMenuUI = null;
 
     [SerializeField]
-    private GameObject _gameOverUI;
+    private GameObject _gameOverUI = null;
 
     [SerializeField]
-    private GameObject _gameWonUI;
+    private GameObject _gameWonUI = null;
 
 
     #region Game Scene
