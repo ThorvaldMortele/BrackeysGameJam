@@ -11,11 +11,16 @@ namespace GameSystem.Upgrades
 {
     public class PickupManager : MonoBehaviour
     {
+        [Header("PickupSettings")]
+        [SerializeField]
         private float _pickupSpawnRange = 40f;
-        private float _timer;
+        [SerializeField]
         private float _pickupSpawnRate = 3;
+        [SerializeField]
         private float _maxPickupCount = 15;
 
+        private float _timer;
+        
         public List<GameObject> Pickups;
         public LayerMask PickupSpawnCheck;
         private Vector3 _offset = new Vector3(0, 2, 0);
@@ -46,14 +51,13 @@ namespace GameSystem.Upgrades
 
         private void SpawnPickup(GameObject pickup)
         {
-            RaycastHit hit;
 
             var spawnPos = new Vector3(
                 UnityEngine.Random.Range(-_pickupSpawnRange, _pickupSpawnRange),
                 15,
                 UnityEngine.Random.Range(-_pickupSpawnRange, _pickupSpawnRange));
 
-            if (Physics.Raycast(spawnPos, -transform.up, out hit, 50f, PickupSpawnCheck))
+            if (Physics.Raycast(spawnPos, -transform.up, out RaycastHit hit, 50f, PickupSpawnCheck))
             {
                 var go = Instantiate(pickup, hit.point + _offset, Quaternion.identity);
 

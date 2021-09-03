@@ -12,9 +12,7 @@ namespace BossSystem
         
         public float CoolDown = 3f; //Cooldown for the cannon to shoot again
 
-        public float BulletDecay = 3f;
-        
-        public GameObject Bullet; //Bullet gameObject that will be instantiated
+        public float BulletDecay = 6f;
 
         public float BulletSpeed = 15f; //Speed of instantiated gameObject
 

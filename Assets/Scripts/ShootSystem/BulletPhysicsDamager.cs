@@ -1,4 +1,5 @@
-﻿using GameSystem.Enemies;
+﻿using GameSystem;
+using GameSystem.Enemies;
 using UnityEngine;
 
 namespace ShootSystem
@@ -37,6 +38,18 @@ namespace ShootSystem
 
                 _hitSounds.InstantiateSound(this.transform.position);
 
+                this.gameObject.SetActive(false);
+            }
+            else if (collision.gameObject.TryGetComponent(out PlayerStatistics playerStats))
+            {
+                playerStats.GetDamaged(_damage);
+
+                _hitSounds.InstantiateSound(this.transform.position);
+
+                this.gameObject.SetActive(false);
+            }
+            else
+            {
                 this.gameObject.SetActive(false);
             }
         }
