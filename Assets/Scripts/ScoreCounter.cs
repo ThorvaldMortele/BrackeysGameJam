@@ -20,8 +20,6 @@ public class ScoreCounter : MonoBehaviour
     public int ScoreShown;
     public int ComboScoreShown;
 
-    private float _timer;
-
     private bool _scoreIsIncreasing;
 
     private string _format;

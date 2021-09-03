@@ -7,16 +7,16 @@ namespace GameSystem
 
     public class GameLoop : MonoBehaviour
     {
-        private bool gameHasEnded = false;
-        public float restartDelay = 2f;
+        private bool _gameHasEnded = false;
+        public float RestartDelay = 2f;
 
         public void EndGame()
         {
-            if(gameHasEnded == false)
+            if (!_gameHasEnded)
             {
-                gameHasEnded = true;
+                _gameHasEnded = true;
                 Debug.Log("Game Over");
-                Invoke("RestartGame", restartDelay);
+                Invoke("RestartGame", RestartDelay); //needs cleanup
             }            
         }
 

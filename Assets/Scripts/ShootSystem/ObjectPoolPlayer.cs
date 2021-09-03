@@ -22,7 +22,7 @@ namespace ShootSystem
 
             for (int i = 0; i < AmountToPool; i++)
             {
-                tmp = Instantiate(ObjectToPool);
+                tmp = Instantiate(ObjectToPool, this.gameObject.transform);
                 tmp.SetActive(false);
                 PooledObjects.Add(tmp);
             }

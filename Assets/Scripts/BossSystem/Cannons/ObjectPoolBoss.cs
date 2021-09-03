@@ -17,16 +17,13 @@ namespace BossSystem
         private void Awake()
         {
             Instance = this;
-        }
 
-        private void Start()
-        {
             PooledObjects = new List<GameObject>();
             GameObject tmp;
 
             for (int i = 0; i < AmountToPool; i++)
             {
-                tmp = Instantiate(ObjectToPool);
+                tmp = Instantiate(ObjectToPool, this.gameObject.transform);
                 tmp.SetActive(false);
                 PooledObjects.Add(tmp);
             }

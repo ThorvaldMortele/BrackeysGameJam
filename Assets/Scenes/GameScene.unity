@@ -848,6 +848,7 @@ GameObject:
   - component: {fileID: 101284656}
   - component: {fileID: 101284658}
   - component: {fileID: 101284657}
+  - component: {fileID: 101284659}
   m_Layer: 0
   m_Name: Turret (6)
   m_TagString: Untagged
@@ -916,6 +917,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 101284655}
   m_Mesh: {fileID: 2165579551946672802, guid: 688119f4f051724448652bc98600cc0f, type: 3}
+--- !u!114 &101284659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101284655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5a3960f00ea7574ca4dc83663015623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CoolDown: 3
+  Bullet: {fileID: 5974485147396127709, guid: 4003f8d76185456439f24fcccbc6b2d5, type: 3}
+  BulletSpeed: 5
+  CanShoot: 1
 --- !u!1001 &119088651
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2580,6 +2597,7 @@ GameObject:
   - component: {fileID: 330281829}
   - component: {fileID: 330281831}
   - component: {fileID: 330281830}
+  - component: {fileID: 330281832}
   m_Layer: 0
   m_Name: Turret (4)
   m_TagString: Untagged
@@ -2648,6 +2666,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330281828}
   m_Mesh: {fileID: 2165579551946672802, guid: 688119f4f051724448652bc98600cc0f, type: 3}
+--- !u!114 &330281832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330281828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5a3960f00ea7574ca4dc83663015623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CoolDown: 3
+  Bullet: {fileID: 5974485147396127709, guid: 4003f8d76185456439f24fcccbc6b2d5, type: 3}
+  BulletSpeed: 5
+  CanShoot: 1
 --- !u!1001 &331685400
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3175,6 +3209,7 @@ GameObject:
   - component: {fileID: 419657373}
   - component: {fileID: 419657375}
   - component: {fileID: 419657374}
+  - component: {fileID: 419657376}
   m_Layer: 0
   m_Name: Turret (2)
   m_TagString: Untagged
@@ -3243,6 +3278,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 419657372}
   m_Mesh: {fileID: 2165579551946672802, guid: 688119f4f051724448652bc98600cc0f, type: 3}
+--- !u!114 &419657376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419657372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5a3960f00ea7574ca4dc83663015623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CoolDown: 3
+  Bullet: {fileID: 5974485147396127709, guid: 4003f8d76185456439f24fcccbc6b2d5, type: 3}
+  BulletSpeed: 5
+  CanShoot: 1
 --- !u!1001 &446644134
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3482,6 +3533,7 @@ GameObject:
   - component: {fileID: 509409744}
   - component: {fileID: 509409746}
   - component: {fileID: 509409745}
+  - component: {fileID: 509409747}
   m_Layer: 0
   m_Name: Turret (8)
   m_TagString: Untagged
@@ -3550,6 +3602,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 509409743}
   m_Mesh: {fileID: 2165579551946672802, guid: 688119f4f051724448652bc98600cc0f, type: 3}
+--- !u!114 &509409747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509409743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5a3960f00ea7574ca4dc83663015623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CoolDown: 3
+  Bullet: {fileID: 5974485147396127709, guid: 4003f8d76185456439f24fcccbc6b2d5, type: 3}
+  BulletSpeed: 5
+  CanShoot: 1
 --- !u!1 &513244834
 GameObject:
   m_ObjectHideFlags: 0
@@ -4336,6 +4404,7 @@ GameObject:
   - component: {fileID: 659626535}
   - component: {fileID: 659626537}
   - component: {fileID: 659626536}
+  - component: {fileID: 659626538}
   m_Layer: 0
   m_Name: Turret (13)
   m_TagString: Untagged
@@ -4404,6 +4473,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 659626534}
   m_Mesh: {fileID: 2165579551946672802, guid: 688119f4f051724448652bc98600cc0f, type: 3}
+--- !u!114 &659626538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 659626534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5a3960f00ea7574ca4dc83663015623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CoolDown: 3
+  Bullet: {fileID: 5974485147396127709, guid: 4003f8d76185456439f24fcccbc6b2d5, type: 3}
+  BulletSpeed: 5
+  CanShoot: 1
 --- !u!1001 &707468431
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4889,6 +4974,7 @@ GameObject:
   - component: {fileID: 770500155}
   - component: {fileID: 770500157}
   - component: {fileID: 770500156}
+  - component: {fileID: 770500158}
   m_Layer: 0
   m_Name: Turret (12)
   m_TagString: Untagged
@@ -4957,6 +5043,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 770500154}
   m_Mesh: {fileID: 2165579551946672802, guid: 688119f4f051724448652bc98600cc0f, type: 3}
+--- !u!114 &770500158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770500154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5a3960f00ea7574ca4dc83663015623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CoolDown: 3
+  Bullet: {fileID: 5974485147396127709, guid: 4003f8d76185456439f24fcccbc6b2d5, type: 3}
+  BulletSpeed: 5
+  CanShoot: 1
 --- !u!1001 &776227118
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5817,6 +5919,7 @@ GameObject:
   - component: {fileID: 838909149}
   - component: {fileID: 838909151}
   - component: {fileID: 838909150}
+  - component: {fileID: 838909152}
   m_Layer: 0
   m_Name: Turret (5)
   m_TagString: Untagged
@@ -5885,6 +5988,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 838909148}
   m_Mesh: {fileID: 2165579551946672802, guid: 688119f4f051724448652bc98600cc0f, type: 3}
+--- !u!114 &838909152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838909148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5a3960f00ea7574ca4dc83663015623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CoolDown: 3
+  Bullet: {fileID: 5974485147396127709, guid: 4003f8d76185456439f24fcccbc6b2d5, type: 3}
+  BulletSpeed: 5
+  CanShoot: 1
 --- !u!1 &859639591
 GameObject:
   m_ObjectHideFlags: 0
@@ -6979,6 +7098,7 @@ GameObject:
   - component: {fileID: 962494137}
   - component: {fileID: 962494139}
   - component: {fileID: 962494138}
+  - component: {fileID: 962494140}
   m_Layer: 0
   m_Name: Turret (10)
   m_TagString: Untagged
@@ -7047,6 +7167,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 962494136}
   m_Mesh: {fileID: 2165579551946672802, guid: 688119f4f051724448652bc98600cc0f, type: 3}
+--- !u!114 &962494140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962494136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5a3960f00ea7574ca4dc83663015623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CoolDown: 3
+  Bullet: {fileID: 5974485147396127709, guid: 4003f8d76185456439f24fcccbc6b2d5, type: 3}
+  BulletSpeed: 5
+  CanShoot: 1
 --- !u!1001 &973206600
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8137,6 +8273,7 @@ GameObject:
   - component: {fileID: 1146545872}
   - component: {fileID: 1146545874}
   - component: {fileID: 1146545873}
+  - component: {fileID: 1146545875}
   m_Layer: 0
   m_Name: Turret (7)
   m_TagString: Untagged
@@ -8205,6 +8342,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1146545871}
   m_Mesh: {fileID: 2165579551946672802, guid: 688119f4f051724448652bc98600cc0f, type: 3}
+--- !u!114 &1146545875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146545871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5a3960f00ea7574ca4dc83663015623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CoolDown: 3
+  Bullet: {fileID: 5974485147396127709, guid: 4003f8d76185456439f24fcccbc6b2d5, type: 3}
+  BulletSpeed: 5
+  CanShoot: 1
 --- !u!1 &1154892610
 GameObject:
   m_ObjectHideFlags: 0
@@ -8543,6 +8696,7 @@ GameObject:
   - component: {fileID: 1226143765}
   - component: {fileID: 1226143767}
   - component: {fileID: 1226143766}
+  - component: {fileID: 1226143768}
   m_Layer: 0
   m_Name: Turret (11)
   m_TagString: Untagged
@@ -8611,6 +8765,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1226143764}
   m_Mesh: {fileID: 2165579551946672802, guid: 688119f4f051724448652bc98600cc0f, type: 3}
+--- !u!114 &1226143768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226143764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5a3960f00ea7574ca4dc83663015623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CoolDown: 3
+  Bullet: {fileID: 5974485147396127709, guid: 4003f8d76185456439f24fcccbc6b2d5, type: 3}
+  BulletSpeed: 5
+  CanShoot: 1
 --- !u!1 &1226793086
 GameObject:
   m_ObjectHideFlags: 0
@@ -8988,6 +9158,7 @@ GameObject:
   - component: {fileID: 1260297537}
   - component: {fileID: 1260297539}
   - component: {fileID: 1260297538}
+  - component: {fileID: 1260297540}
   m_Layer: 0
   m_Name: Turret (15)
   m_TagString: Untagged
@@ -9056,6 +9227,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1260297536}
   m_Mesh: {fileID: 2165579551946672802, guid: 688119f4f051724448652bc98600cc0f, type: 3}
+--- !u!114 &1260297540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260297536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5a3960f00ea7574ca4dc83663015623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CoolDown: 3
+  Bullet: {fileID: 5974485147396127709, guid: 4003f8d76185456439f24fcccbc6b2d5, type: 3}
+  BulletSpeed: 5
+  CanShoot: 1
 --- !u!1001 &1262561343
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11346,9 +11533,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CoolDown: 3
-  Bullet: {fileID: 0}
-  _bulletSpeed: 5
-  _canShoot: 1
+  Bullet: {fileID: 5974485147396127709, guid: 4003f8d76185456439f24fcccbc6b2d5, type: 3}
+  BulletSpeed: 5
+  CanShoot: 1
 --- !u!1001 &1488385025
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11909,6 +12096,7 @@ GameObject:
   - component: {fileID: 1569518583}
   - component: {fileID: 1569518585}
   - component: {fileID: 1569518584}
+  - component: {fileID: 1569518586}
   m_Layer: 0
   m_Name: Turret (14)
   m_TagString: Untagged
@@ -11977,6 +12165,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1569518582}
   m_Mesh: {fileID: 2165579551946672802, guid: 688119f4f051724448652bc98600cc0f, type: 3}
+--- !u!114 &1569518586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569518582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5a3960f00ea7574ca4dc83663015623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CoolDown: 3
+  Bullet: {fileID: 5974485147396127709, guid: 4003f8d76185456439f24fcccbc6b2d5, type: 3}
+  BulletSpeed: 5
+  CanShoot: 1
 --- !u!1 &1574763311
 GameObject:
   m_ObjectHideFlags: 0
@@ -13208,6 +13412,7 @@ GameObject:
   - component: {fileID: 1745254537}
   - component: {fileID: 1745254539}
   - component: {fileID: 1745254538}
+  - component: {fileID: 1745254540}
   m_Layer: 0
   m_Name: Turret (1)
   m_TagString: Untagged
@@ -13276,6 +13481,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1745254536}
   m_Mesh: {fileID: 2165579551946672802, guid: 688119f4f051724448652bc98600cc0f, type: 3}
+--- !u!114 &1745254540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745254536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5a3960f00ea7574ca4dc83663015623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CoolDown: 3
+  Bullet: {fileID: 5974485147396127709, guid: 4003f8d76185456439f24fcccbc6b2d5, type: 3}
+  BulletSpeed: 5
+  CanShoot: 1
 --- !u!4 &1758462835 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9051238300485817969, guid: 2f6c4572e07a60b43b00e1c4f489a806,
@@ -13522,6 +13743,7 @@ GameObject:
   - component: {fileID: 1796542227}
   - component: {fileID: 1796542229}
   - component: {fileID: 1796542228}
+  - component: {fileID: 1796542230}
   m_Layer: 0
   m_Name: Turret (9)
   m_TagString: Untagged
@@ -13590,6 +13812,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1796542226}
   m_Mesh: {fileID: 2165579551946672802, guid: 688119f4f051724448652bc98600cc0f, type: 3}
+--- !u!114 &1796542230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796542226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5a3960f00ea7574ca4dc83663015623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CoolDown: 3
+  Bullet: {fileID: 5974485147396127709, guid: 4003f8d76185456439f24fcccbc6b2d5, type: 3}
+  BulletSpeed: 5
+  CanShoot: 1
 --- !u!1001 &1816541378
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15904,6 +16142,7 @@ GameObject:
   - component: {fileID: 7406665850146439750}
   - component: {fileID: 2904311156874852449}
   - component: {fileID: 3858541538588008954}
+  - component: {fileID: 417854360242311040}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Untagged
@@ -15911,6 +16150,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &417854360242311040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 417854360242311039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5a3960f00ea7574ca4dc83663015623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CoolDown: 3
+  Bullet: {fileID: 5974485147396127709, guid: 4003f8d76185456439f24fcccbc6b2d5, type: 3}
+  BulletSpeed: 5
+  CanShoot: 1
 --- !u!4 &556314244244287566
 Transform:
   m_ObjectHideFlags: 0
