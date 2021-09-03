@@ -42,13 +42,9 @@ namespace BossSystem
         {
             if (CanShoot)
             {
-                Debug.Log("test");
-
-                //instantiate bullet with bulletspeed
                 var bullet = SpawnBullet();
 
                 StartCoroutine(RemoveBullet(bullet, BulletDecay));
-                //add force
             }
 
         }

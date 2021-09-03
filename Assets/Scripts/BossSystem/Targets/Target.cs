@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using BossSystem;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,8 +16,10 @@ public class Target : MonoBehaviour
     [SerializeField]
     private Material _inactiveMaterial;
 
-    private bool _isTargetActive = true;
+    public bool IsTargetActive = true;
     private WaitForSeconds _waitForSeconds;
+
+    public LayerBase Layerbase;
 
     private void Awake()
     {
@@ -25,18 +28,18 @@ public class Target : MonoBehaviour
 
     private void Start()
     {
-        
         StartCoroutine(DelayFlip());
-        
     }
 
     // Update is called once per frame
     private void Update()
     {
-        if (_targetHealth == 0 && _isTargetActive)
+        if (_targetHealth == 0 && IsTargetActive)
         {
             _originalMaterial.sharedMaterial = _inactiveMaterial;
             _targetHealth = _maxTargetHealth;
+            IsTargetActive = false;
+            Layerbase.TargetBools.Add(this.IsTargetActive);
         }
     }
 
@@ -54,7 +57,7 @@ public class Target : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (_isTargetActive)
+        if (IsTargetActive)
         {
             _targetHealth--;
         }
