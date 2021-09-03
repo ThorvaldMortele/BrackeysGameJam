@@ -45,7 +45,7 @@ namespace MoveSystem
         {
             _isGrounded = Physics.CheckSphere(GroundCheck.position, GroundDist, GroundMask);
 
-            if (_isGrounded && _velocity.y < 0)  
+            if (_isGrounded && _velocity.y < 0)
             {
                 _velocity.y = -2f;
             }
@@ -91,7 +91,15 @@ namespace MoveSystem
                 ChangeAnimationState(PLAYER_IDLE);
             }
 
+            JumpPlayer(x, z);
 
+            _velocity.y += Gravity * Time.deltaTime;
+
+            Controller.Move(_velocity * Time.deltaTime);
+        }
+
+        private void JumpPlayer(float x, float z)
+        {
             Vector3 move = transform.right * x + transform.forward * z;
 
             if (_playerStats.IsAlive)
@@ -107,11 +115,6 @@ namespace MoveSystem
                     //Play jump start sound effect
                 }
             }
-
-
-            _velocity.y += Gravity * Time.deltaTime;
-
-            Controller.Move(_velocity * Time.deltaTime);
         }
 
         IEnumerator SetCanLandBool()

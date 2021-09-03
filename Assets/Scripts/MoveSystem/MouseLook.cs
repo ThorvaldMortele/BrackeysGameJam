@@ -11,7 +11,8 @@ namespace MoveSystem
 
         void Start()
         {
-            Cursor.lockState = CursorLockMode.Locked;
+            //Only needed in unity editor, when starting from the gamescene
+            Cursor.lockState = CursorLockMode.Locked; //Lock MouseCursor so it doesn't show up on top of the game
         }
         
         void Update()
@@ -26,7 +27,7 @@ namespace MoveSystem
             PlayerBody.Rotate(Vector3.up * mouseX);
         }
 
-        public void UpdateSensititvity(float amount)
+        public void UpdateSensititvity(float amount) //Called by the MouseSensitivity slider
         {
             MouseSensitivity = amount;
         }

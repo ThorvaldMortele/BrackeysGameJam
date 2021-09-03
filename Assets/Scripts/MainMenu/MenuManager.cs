@@ -22,7 +22,7 @@ public class MenuManager : MonoBehaviour
     #region Game Scene
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape)) //Pause game when Esc is pressed
         {
             if (gameIsPaused)
             {
@@ -84,7 +84,6 @@ public class MenuManager : MonoBehaviour
     #region Main Menu
     public void PlayGame()
     {
-        //var mainMenuIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene("GameScene"); //Loads the GameScene
         Cursor.lockState = CursorLockMode.Locked;
     }
