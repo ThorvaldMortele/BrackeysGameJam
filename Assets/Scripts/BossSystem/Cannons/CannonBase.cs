@@ -20,10 +20,10 @@ namespace BossSystem
 
         public virtual void Update()
         {
-            ShootCannon(_canShoot);
+            //ShootCannon(_canShoot);
         }
 
-        public virtual void ShootCannon(bool CanShoot) { }
+        //public void ShootCannon(bool CanShoot) { }
 
 
         //If player is hit

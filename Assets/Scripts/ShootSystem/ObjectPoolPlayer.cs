@@ -3,9 +3,9 @@ using UnityEngine;
 
 namespace ShootSystem
 {
-    public class ObjectPool : MonoBehaviour
+    public class ObjectPoolPlayer : MonoBehaviour
     {
-        public static ObjectPool Instance;
+        public static ObjectPoolPlayer Instance;
         public List<GameObject> PooledObjects;
         public GameObject ObjectToPool;
         public int AmountToPool;
