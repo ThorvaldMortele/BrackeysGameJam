@@ -21,7 +21,7 @@ namespace GameSystem.Enemies
 
         public bool CanGetShoved;
 
-        private void Start()
+        private void Awake()
         {
             _scoreScript = FindObjectOfType<ScoreCalculation>();
             _rigidBody = GetComponent<Rigidbody>();
@@ -29,18 +29,23 @@ namespace GameSystem.Enemies
 
 
         // for physics collisions
-        public void TakeDamage(int amount, ContactPoint pointOfContact, Vector3 bulletDirection, int pushStrength)
+        public void TakeDamage(int amount, ContactPoint pointOfContact, Vector3 bulletDirection, int pushStrength
+            , ParticleSystem hitParticle, ParticleSystem deathParticle)
         {
             HP -= amount;
 
             GetShoved(bulletDirection, pushStrength);
 
             // show blood (or sumfin alike)
-            Instantiate(HitParticle, pointOfContact.point, Quaternion.identity);
+
+
+            Instantiate(hitParticle, pointOfContact.point, Quaternion.identity);
+            
+            
 
             if (HP <= 0)
             {
-                Instantiate(DeathParticle, pointOfContact.point, Quaternion.identity);
+                Instantiate(deathParticle, pointOfContact.point, Quaternion.identity);
                 _scoreScript.IncreaseScore(EnemyScoreValue);
                 Die();              
             }              
