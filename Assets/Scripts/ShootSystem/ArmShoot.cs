@@ -82,7 +82,7 @@ namespace ShootSystem
             var bullets = new List<GameObject>();
             for (int i = 0; i < 3; i++)
             {
-                var bullet = ObjectPool.Instance.GetPooledObject();
+                var bullet = ObjectPoolPlayer.Instance.GetPooledObject();
                 if (bullet != null)
                 {
                     bullet.transform.position = this.transform.position + transform.up;
@@ -106,8 +106,6 @@ namespace ShootSystem
 
         private void ShootLaser()
         {
-            RaycastHit hit;
-
             LaserLine.SetPosition(0, this.transform.position);
             LaserLine.SetPosition(LaserLine.positionCount - 1, transform.position + FpsCam.transform.forward * LaserLength);
 
@@ -115,10 +113,10 @@ namespace ShootSystem
             LaserLine.endColor = Color.red;
 
             // rayCast damage (might work for a laser or sumfin)
-            if (Physics.Raycast(FpsCam.transform.position, FpsCam.transform.forward, out hit, Range))
+            if (Physics.Raycast(FpsCam.transform.position, FpsCam.transform.forward, out RaycastHit hit, Range))
             {
                 GameObject go = hit.transform.gameObject;
-                if (go != null && go.tag == "Enemy")
+                if (go != null && go.CompareTag("Enemy"))
                 {
                     if (go.TryGetComponent(out EnemyBase enemyB))
                     {
@@ -134,7 +132,7 @@ namespace ShootSystem
 
         private GameObject SpawnBullet()
         {
-            var bullet = ObjectPool.Instance.GetPooledObject();
+            var bullet = ObjectPoolPlayer.Instance.GetPooledObject();
             if (bullet != null)
             {
                 bullet.transform.position = this.transform.position + transform.up;

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.08040224, g: 0.09979327, b: 0.3011908, a: 1}
+  m_IndirectSpecularColor: {r: 0.08046258, g: 0.099853046, b: 0.30124947, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1396,6 +1396,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 176688781}
   m_CullTransparentMesh: 0
+--- !u!1 &188072927
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 188072929}
+  - component: {fileID: 188072928}
+  m_Layer: 0
+  m_Name: ObjectPoolBoss
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &188072928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188072927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d514592c55809a044bd5c7687401b103, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PooledObjects: []
+  ObjectToPool: {fileID: 5974485147396127709, guid: 4003f8d76185456439f24fcccbc6b2d5,
+    type: 3}
+  AmountToPool: 100
+--- !u!4 &188072929
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188072927}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &195107551
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5299,7 +5346,7 @@ GameObject:
   - component: {fileID: 797183394}
   - component: {fileID: 797183393}
   m_Layer: 0
-  m_Name: ObjectPool
+  m_Name: ObjectPoolPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5314,7 +5361,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 797183392}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aab70ff9407b1a847b95053d38689fb4, type: 3}
+  m_Script: {fileID: 11500000, guid: 7edfc339545b1d148aaa7825001f85bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   PooledObjects: []
@@ -11299,7 +11346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CoolDown: 3
-  _bullet: {fileID: 0}
+  Bullet: {fileID: 0}
   _bulletSpeed: 5
   _canShoot: 1
 --- !u!1001 &1488385025
@@ -17015,7 +17062,7 @@ GameObject:
   - component: {fileID: 5066927430165824273}
   - component: {fileID: 7760194292471404189}
   m_Layer: 0
-  m_Name: Layer5
+  m_Name: Layer0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
