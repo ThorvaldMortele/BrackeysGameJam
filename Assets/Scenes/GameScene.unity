@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.08046258, g: 0.099853046, b: 0.30124947, a: 1}
+  m_IndirectSpecularColor: {r: 0.08040224, g: 0.09979327, b: 0.3011908, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -11217,6 +11217,7 @@ GameObject:
   - component: {fileID: 1481657625}
   - component: {fileID: 1481657627}
   - component: {fileID: 1481657626}
+  - component: {fileID: 1481657628}
   m_Layer: 0
   m_Name: Turret (3)
   m_TagString: Untagged
@@ -11285,6 +11286,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1481657624}
   m_Mesh: {fileID: 2165579551946672802, guid: 688119f4f051724448652bc98600cc0f, type: 3}
+--- !u!114 &1481657628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481657624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5a3960f00ea7574ca4dc83663015623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CoolDown: 3
+  _bullet: {fileID: 0}
+  _bulletSpeed: 5
+  _canShoot: 1
 --- !u!1001 &1488385025
 PrefabInstance:
   m_ObjectHideFlags: 0
