@@ -23,7 +23,7 @@ namespace BossSystem
             WaitForSeconds = new WaitForSeconds(CoolDown);
         }
 
-        public void Start()
+        public virtual void Start()
         {
             StartCoroutine(ShootDelay());
         }
@@ -66,7 +66,7 @@ namespace BossSystem
             return bullet;
         }
 
-        public IEnumerator RemoveBullet(GameObject bullet, float timer)
+        private IEnumerator RemoveBullet(GameObject bullet, float timer)
         {
             yield return new WaitForSeconds(timer);
 
@@ -75,10 +75,6 @@ namespace BossSystem
             bullet.transform.rotation = this.transform.rotation;
         }
 
-        public virtual void Update()
-        {
-            //ShootCannon(_canShoot);
-        }
 
         //public void ShootCannon(bool CanShoot) { }
 

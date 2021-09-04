@@ -6,6 +6,40 @@ namespace BossSystem
 {
     public class CannonLob : CannonBase
     {
+        private float _animation;
+
+        private GameObject _bullet;
+
+        public override void Start()
+        {
+            StartCoroutine(ShootTiming());
+        }
+
+        private void Update()
+        {
+            if (_bullet != null)
+            {
+                _animation += Time.deltaTime;
+
+                _animation = _animation % 5;
+
+                _bullet.transform.position = MathParabole.Parabola(this.transform.position, Vector3.up * 20, 5f, _animation / 5f);
+            }
+        }
+
+        private IEnumerator ShootTiming()
+        {
+            for (; ; )
+            {
+                _bullet = SpawnBullet();
+
+                yield return new WaitForSeconds(6f);
+
+                StartCoroutine(RemoveBullet(_bullet, 2));
+                _bullet = null;
+            }
+        }
+
         // Cannon that shoots parabollic
         public override GameObject SpawnBullet()
         {
@@ -17,12 +51,16 @@ namespace BossSystem
                 bullet.SetActive(true);
             }
 
-            var bulletRB = bullet.GetComponent<Rigidbody>();
-
-            bulletRB.velocity = Vector3.zero;  // This fixed the shooting (bullets still had an original velocity on them, thats why they shot amiss)
-            bulletRB.AddForce(transform.up * BulletSpeed, ForceMode.Impulse);
-
             return bullet;
+        }
+
+        private IEnumerator RemoveBullet(GameObject bullet, float timer)
+        {
+            yield return new WaitForSeconds(timer);
+
+            bullet.SetActive(false);
+            bullet.transform.position = this.transform.position + transform.up;
+            bullet.transform.rotation = this.transform.rotation;
         }
     }
 }
