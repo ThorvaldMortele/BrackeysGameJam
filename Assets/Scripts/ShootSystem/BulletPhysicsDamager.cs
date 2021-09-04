@@ -57,7 +57,7 @@ namespace ShootSystem
 
         private IEnumerator DeactivateBullet()
         {
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.1f);
             this.gameObject.SetActive(false);
         }
     }

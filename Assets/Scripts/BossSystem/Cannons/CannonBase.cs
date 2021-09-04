@@ -6,13 +6,13 @@ namespace BossSystem
 {
     public class CannonBase : MonoBehaviour
     {
-        WaitForSeconds WaitForSeconds;
+        public WaitForSeconds WaitForSeconds;
 
         [Header("ShootSettings")]
         
         public float CoolDown = 3f; //Cooldown for the cannon to shoot again
 
-        public float BulletDecay = 6f;
+        public float BulletDecay = 12f;
 
         public float BulletSpeed = 15f; //Speed of instantiated gameObject
 

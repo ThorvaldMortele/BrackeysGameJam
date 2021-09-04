@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class ParabolaController : MonoBehaviour
+public class ParaboleController : MonoBehaviour
 {
     /// <summary>
     /// Animation Speed
@@ -64,7 +64,6 @@ public class ParabolaController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
         parabolaFly = new ParabolaFly(ParabolaRoot.transform);
 
         if (Autostart)

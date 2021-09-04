@@ -43,6 +43,7 @@ public class Target : MonoBehaviour
             IsTargetActive = false;
             Layerbase.TargetBools.Add(this.IsTargetActive);
         }
+        else return;
     }
 
     private IEnumerator DelayFlip()
@@ -57,6 +58,7 @@ public class Target : MonoBehaviour
 
                 transform.rotation = _initialTransform.rotation;
             }
+            else break;
         }
     }
 
@@ -66,5 +68,6 @@ public class Target : MonoBehaviour
         {
             _targetHealth--;
         }
+        else return;
     }
 }

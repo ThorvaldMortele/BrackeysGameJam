@@ -17,6 +17,8 @@ namespace BossSystem
             
             if (!TargetBools.Contains(true))
             {
+                //CanShoot = false;
+
                 //add to list of all targets or smth
                 //its to start the second wave
             }
