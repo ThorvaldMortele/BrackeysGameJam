@@ -46,10 +46,9 @@ namespace BossSystem
 
                 StartCoroutine(RemoveBullet(bullet, BulletDecay));
             }
-
         }
 
-        private GameObject SpawnBullet()
+        public virtual GameObject SpawnBullet()
         {
             var bullet = ObjectPoolBoss.Instance.GetPooledObject(); //Just fill in the enemy object pool class
             if (bullet != null)

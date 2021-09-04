@@ -15,6 +15,8 @@ public class Target : MonoBehaviour
     private MeshRenderer _originalMaterial;
     [SerializeField]
     private Material _inactiveMaterial;
+    [SerializeField]
+    private Transform _initialTransform;
 
     public bool IsTargetActive = true;
     private WaitForSeconds _waitForSeconds;
@@ -47,11 +49,14 @@ public class Target : MonoBehaviour
     {
         for (; ; )
         {
-            transform.Rotate(Vector3.up, 180);
+            if (IsTargetActive)
+            {
+                transform.Rotate(Vector3.right, 180);
 
-            yield return _waitForSeconds;
+                yield return _waitForSeconds;
 
-            transform.Rotate(Vector3.up, 180);
+                transform.rotation = _initialTransform.rotation;
+            }
         }
     }
 

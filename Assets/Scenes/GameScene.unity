@@ -13644,6 +13644,7 @@ MonoBehaviour:
   _flipCooldown: 8
   _originalMaterial: {fileID: 1753583816}
   _inactiveMaterial: {fileID: 2100000, guid: cc27849d1f26d1a499f47f4f56ccda21, type: 2}
+  _initialTransform: {fileID: 1753583812}
   IsTargetActive: 1
   Layerbase: {fileID: 304284941521047657}
 --- !u!65 &1753583814
@@ -13777,6 +13778,7 @@ MonoBehaviour:
   _flipCooldown: 8
   _originalMaterial: {fileID: 1763546948}
   _inactiveMaterial: {fileID: 2100000, guid: cc27849d1f26d1a499f47f4f56ccda21, type: 2}
+  _initialTransform: {fileID: 1763546944}
   IsTargetActive: 1
   Layerbase: {fileID: 304284941521047657}
 --- !u!65 &1763546946
@@ -16270,6 +16272,7 @@ MonoBehaviour:
   _flipCooldown: 8
   _originalMaterial: {fileID: 2132622237}
   _inactiveMaterial: {fileID: 2100000, guid: cc27849d1f26d1a499f47f4f56ccda21, type: 2}
+  _initialTransform: {fileID: 2132622233}
   IsTargetActive: 1
   Layerbase: {fileID: 304284941521047657}
 --- !u!65 &2132622235
@@ -18336,6 +18339,7 @@ MonoBehaviour:
   _flipCooldown: 8
   _originalMaterial: {fileID: 3011234413302236966}
   _inactiveMaterial: {fileID: 2100000, guid: cc27849d1f26d1a499f47f4f56ccda21, type: 2}
+  _initialTransform: {fileID: 2170103125100884101}
   IsTargetActive: 1
   Layerbase: {fileID: 304284941521047657}
 --- !u!65 &8097351617111070291

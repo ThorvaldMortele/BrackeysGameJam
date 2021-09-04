@@ -1,5 +1,6 @@
 ﻿using GameSystem;
 using GameSystem.Enemies;
+using System.Collections;
 using UnityEngine;
 
 namespace ShootSystem
@@ -50,8 +51,14 @@ namespace ShootSystem
             }
             else
             {
-                this.gameObject.SetActive(false);
+                StartCoroutine(DeactivateBullet());
             }
+        }
+
+        private IEnumerator DeactivateBullet()
+        {
+            yield return new WaitForSeconds(0.5f);
+            this.gameObject.SetActive(false);
         }
     }
 }
