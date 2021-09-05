@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace GameSystem
+namespace GameSystem.Player
 {
     public class PlayerSounds : MonoBehaviour
     {

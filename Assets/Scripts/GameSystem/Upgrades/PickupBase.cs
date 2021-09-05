@@ -1,10 +1,8 @@
 ﻿using ShootSystem;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace GameSystem.Upgrades
-{ 
+{
     public class PickupBase : PickupManager
     {
         public ArmShoot ArmShoot;
@@ -22,6 +20,5 @@ namespace GameSystem.Upgrades
         }
 
         public virtual void OnTriggerEnter(Collider other) { }
-
     }
 }

@@ -1,4 +1,5 @@
-﻿using MoveSystem;
+﻿using GameSystem.Score;
+using MoveSystem;
 using UnityEngine;
 
 namespace GameSystem.Enemies

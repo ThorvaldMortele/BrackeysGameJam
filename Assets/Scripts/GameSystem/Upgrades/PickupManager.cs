@@ -1,10 +1,6 @@
 ﻿using ShootSystem;
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace GameSystem.Upgrades
@@ -24,8 +20,7 @@ namespace GameSystem.Upgrades
         public List<GameObject> Pickups;
         public LayerMask PickupSpawnCheck;
         private Vector3 _offset = new Vector3(0, 2, 0);
-
-
+        
 
         private void Update()
         {

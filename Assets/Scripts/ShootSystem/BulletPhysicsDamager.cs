@@ -1,5 +1,6 @@
 ﻿using GameSystem;
 using GameSystem.Enemies;
+using GameSystem.Player;
 using System.Collections;
 using UnityEngine;
 

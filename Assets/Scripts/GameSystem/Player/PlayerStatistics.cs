@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace GameSystem
+namespace GameSystem.Player
 {
     public class PlayerStatistics : MonoBehaviour
     {

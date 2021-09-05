@@ -1,22 +1,23 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class PickupSound : MonoBehaviour
+namespace GameSystem.Upgrades
 {
-    private AudioSource _source;
-
-    [SerializeField]
-    private AudioClip[] _soundEffects;
-
-    void Start()
+    public class PickupSound : MonoBehaviour
     {
-        _source = GetComponent<AudioSource>();
-    }
+        private AudioSource _source;
 
-    // for most of it's sounds...
-    public void PlaySoundEffect(int soundNumber)
-    {
-        _source.PlayOneShot(_soundEffects[soundNumber]);
+        [SerializeField]
+        private AudioClip[] _soundEffects;
+
+        void Start()
+        {
+            _source = GetComponent<AudioSource>();
+        }
+
+        // for most of it's sounds...
+        public void PlaySoundEffect(int soundNumber)
+        {
+            _source.PlayOneShot(_soundEffects[soundNumber]);
+        }
     }
 }

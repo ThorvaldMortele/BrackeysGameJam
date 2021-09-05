@@ -3,6 +3,7 @@ using GameSystem.Enemies;
 using System.Collections;
 using System.Collections.Generic;
 using GameSystem;
+using GameSystem.Player;
 
 namespace ShootSystem
 {

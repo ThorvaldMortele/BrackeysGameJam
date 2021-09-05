@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 
-public class SpawnCollider : MonoBehaviour
+namespace GameSystem.EnemyWaveSystem
 {
-    void OnCollisionEnter(Collision collision)
+    public class SpawnCollider : MonoBehaviour
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        void OnCollisionEnter(Collision collision)
         {
-            Physics.IgnoreCollision(collision.gameObject.GetComponent<BoxCollider>(), this.gameObject.GetComponent<BoxCollider>(), true);
+            if (collision.gameObject.CompareTag("Enemy"))
+            {
+                Physics.IgnoreCollision(collision.gameObject.GetComponent<BoxCollider>(), this.gameObject.GetComponent<BoxCollider>(), true);
+            }
         }
     }
 }

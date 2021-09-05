@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using GameSystem.Player;
+using UnityEngine;
 
 namespace GameSystem.Enemies
 {

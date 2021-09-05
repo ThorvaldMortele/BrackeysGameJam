@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Menu;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -44,7 +45,7 @@ namespace GameSystem.EnemyWaveSystem
         private SpawnState _state = SpawnState.Counting; //Default state set to "Counting"
 
         [SerializeField]
-        private PauseMenu _gameUI;
+        private MenuManager _gameUI;
 
         private void Start()
         {

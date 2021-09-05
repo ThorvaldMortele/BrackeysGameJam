@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 
-public class ParticleSelfDestroy : MonoBehaviour
+namespace GameSystem
 {
-    [SerializeField]
-    private float _lifeTime;
-
-    void Start()
+    public class ParticleSelfDestroy : MonoBehaviour
     {
-        Destroy(this.gameObject, _lifeTime);
+        [SerializeField]
+        private float _lifeTime;
+
+        void Start()
+        {
+            Destroy(this.gameObject, _lifeTime);
+        }
     }
 }
