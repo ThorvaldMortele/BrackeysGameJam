@@ -99,7 +99,6 @@ public class ParaboleController : MonoBehaviour
             animationTime = float.MaxValue;
             Animation = false;
         }
-
     }
 
     public void FollowParabola()
@@ -143,7 +142,6 @@ public class ParaboleController : MonoBehaviour
         parabolaFly.RefreshTransforms(speed);
     }
 
-
     public static float DistanceToLine(Ray ray, Vector3 point)
     {
         //see:http://answers.unity3d.com/questions/62644/distance-between-a-ray-and-a-point.html
@@ -157,7 +155,6 @@ public class ParaboleController : MonoBehaviour
 
     public class ParabolaFly
     {
-
         public Transform[] Points;
         protected Parabola3D[] parabolas;
         protected float[] partDuration;
@@ -187,7 +184,6 @@ public class ParaboleController : MonoBehaviour
                 parabolas = new Parabola3D[(Points.Length - 1) / 2];
                 partDuration = new float[parabolas.Length];
             }
-
         }
 
         public Vector3 GetPositionAtTime(float time)
@@ -240,7 +236,6 @@ public class ParaboleController : MonoBehaviour
 
             if (Points != null)
             {
-
                 completeDuration = 0;
 
                 //create parabolas
@@ -253,10 +248,7 @@ public class ParaboleController : MonoBehaviour
                     partDuration[i] = parabolas[i].Length / speed;
                     completeDuration += partDuration[i];
                 }
-
-
             }
-
         }
     }
 
@@ -342,7 +334,6 @@ public class ParaboleController : MonoBehaviour
                 refreshCurveClose();
             }
         }
-
 
         private void refreshCurveNormal()
         {
@@ -459,9 +450,5 @@ public class ParaboleController : MonoBehaviour
             var x = -b / (2 * a);
             E = new Vector2(x, f(x));
         }
-
-
-
     }
-
 }

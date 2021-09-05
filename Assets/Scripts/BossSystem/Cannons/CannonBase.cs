@@ -8,7 +8,7 @@ namespace BossSystem
     {
         public WaitForSeconds WaitForSeconds;
 
-        [Header("ShootSettings")]
+        [Header("Cannon Base Settings: ")]
         
         public float CoolDown = 3f; //Cooldown for the cannon to shoot again
 
@@ -28,7 +28,7 @@ namespace BossSystem
             StartCoroutine(ShootDelay());
         }
 
-        private IEnumerator ShootDelay()
+        public virtual IEnumerator ShootDelay()
         {
             for (; ; ) //Infinite for loop
             {
@@ -38,7 +38,7 @@ namespace BossSystem
             }
         }
 
-        public void ShootCannon(bool CanShoot)
+        public virtual void ShootCannon(bool CanShoot)
         {
             if (CanShoot)
             {
@@ -66,7 +66,7 @@ namespace BossSystem
             return bullet;
         }
 
-        private IEnumerator RemoveBullet(GameObject bullet, float timer)
+        public virtual IEnumerator RemoveBullet(GameObject bullet, float timer)
         {
             yield return new WaitForSeconds(timer);
 
