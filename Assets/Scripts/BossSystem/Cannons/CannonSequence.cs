@@ -54,14 +54,12 @@ namespace BossSystem
                 var bullet = SpawnBullet();
 
                 StartCoroutine(RemoveBullet(bullet, BulletDecay));
-
-                
             }
 
             yield return SequenceCoolDown;
         }
 
-        public override GameObject SpawnBullet()
+        public override GameObject SpawnBullet(/*int shootcount*/)
         {
             var bullet = ObjectPoolBoss.Instance.GetPooledObject(); //Just fill in the enemy object pool class
             if (bullet != null)
