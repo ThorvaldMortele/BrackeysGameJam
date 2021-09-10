@@ -52,7 +52,10 @@ namespace ShootSystem
             }
             else
             {
-                StartCoroutine(DeactivateBullet());
+                if (this.gameObject != null)
+                {
+                    StartCoroutine(DeactivateBullet());
+                }
             }
         }
 
