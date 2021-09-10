@@ -29,21 +29,14 @@ namespace BossSystem
                 ShootCannon(true);
 
                 yield return WaitForSeconds;    //interval tussen burst van bullets 1-1-1 cooldown 1-1-1
-            }
+            }            
         }
 
         public override void ShootCannon(bool CanShoot)
         {
             if (CanShoot)
             {
-                //Tripple
-
                 StartCoroutine(TrippleBullet());
-
-
-
-
-
             }
         }
 
@@ -56,8 +49,8 @@ namespace BossSystem
                 yield return SequenceCoolDown;
 
                 StartCoroutine(RemoveBullet(bullet, BulletDecay));
+                Debug.Log("delay: " + BulletDecay);
             }
-            //yield return SequenceCoolDown;
         }
 
         public override GameObject SpawnBullet(/*int shootcount*/)
@@ -79,13 +72,13 @@ namespace BossSystem
             return bullet;
         }
 
-        public override IEnumerator RemoveBullet(GameObject bullet, float timer)
-        {
-            yield return new WaitForSeconds(timer);
+        //public override IEnumerator RemoveBullet(GameObject bullet, float timer)
+        //{
+        //    yield return new WaitForSeconds(timer);
 
-            bullet.SetActive(false);
-            bullet.transform.position = this.transform.position + transform.up;
-            bullet.transform.rotation = this.transform.rotation;
-        }
+        //    bullet.SetActive(false);
+        //    bullet.transform.position = this.transform.position + transform.up;
+        //    bullet.transform.rotation = this.transform.rotation;
+        //}
     }
 }

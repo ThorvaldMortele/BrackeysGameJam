@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace BossSystem
 {
-    public class CannonBase : MonoBehaviour
+    public class CannonBase : MonoBehaviour 
     {
         public WaitForSeconds WaitForSeconds;
 

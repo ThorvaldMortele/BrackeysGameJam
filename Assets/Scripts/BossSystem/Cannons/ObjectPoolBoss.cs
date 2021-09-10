@@ -29,13 +29,13 @@ namespace BossSystem
             }
         }
 
-        public GameObject GetPooledObject()
+        public GameObject GetPooledObject() //Possibly a problem with the deactivation
         {
             for (int i = 0; i < AmountToPool; i++)
             {
                 if (!PooledObjects[i].activeInHierarchy)
                 {
-                    return PooledObjects[i];
+                    return PooledObjects[i]; //"Het werkt" - Dizz 2021
                 }
             }
             return null;
