@@ -17,7 +17,7 @@ namespace BossSystem
         //still needs to be changed (mostly deleted)
         public override void Start()
         {
-            SequenceCoolDown = new WaitForSeconds(1f);
+            SequenceCoolDown = new WaitForSeconds(0.5f);
 
             StartCoroutine(ShootDelay());
         }
@@ -28,7 +28,7 @@ namespace BossSystem
             {
                 ShootCannon(true);
 
-                yield return WaitForSeconds;
+                yield return WaitForSeconds;    //interval tussen burst van bullets 1-1-1 cooldown 1-1-1
             }
         }
 
@@ -38,7 +38,7 @@ namespace BossSystem
             {
                 //Tripple
 
-                TippleBullet();
+                StartCoroutine(TrippleBullet());
 
 
 
@@ -47,16 +47,17 @@ namespace BossSystem
             }
         }
 
-        public IEnumerator TippleBullet()
+        public IEnumerator TrippleBullet()
         {
-            for (var shootCount = 0; shootCount <= 3; shootCount++)
+            for (var shootCount = 0; shootCount < 3; shootCount++)
             {
                 var bullet = SpawnBullet();
 
+                yield return SequenceCoolDown;
+
                 StartCoroutine(RemoveBullet(bullet, BulletDecay));
             }
-
-            yield return SequenceCoolDown;
+            //yield return SequenceCoolDown;
         }
 
         public override GameObject SpawnBullet(/*int shootcount*/)
@@ -72,6 +73,7 @@ namespace BossSystem
             var bulletRB = bullet.GetComponent<Rigidbody>();
 
             bulletRB.velocity = Vector3.zero;  // This fixed the shooting (bullets still had an original velocity on them, thats why they shot amiss)
+            bulletRB.useGravity = true;
             bulletRB.AddForce(transform.up * BulletSpeed, ForceMode.Impulse);
 
             return bullet;
